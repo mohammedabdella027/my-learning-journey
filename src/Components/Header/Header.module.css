@@ -1,0 +1,152 @@
+/*  header part */
+.header {
+    background: transparent;
+    padding: 16px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    backdrop-filter: blur(3px);
+    background-color: black;
+}
+
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0 40px;
+    gap: 40px;
+
+}
+
+.logo {
+    flex-shrink: 0;
+    width: 100px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.logo:hover {
+    opacity: 0.8;
+}
+
+/* nav section  */
+.nav {
+    display: flex;
+    gap: 20px;
+    flex: 1;
+    align-items: center;
+}
+
+.navLink {
+    color: #f5f5f1;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+}
+
+.navLink:hover {
+    color: #b3b3b0;
+}
+
+/* right side section */
+.rightSection {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-shrink: 0;
+}
+
+.searchContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.searchButton {
+    background: none;
+    border: none;
+    color: #f5f5f1;
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+}
+
+.searchButton:hover {
+    color: #b3b3b0;
+}
+
+
+.iconButton {
+    position: relative;
+    background: none;
+    border: none;
+    color: #f5f5f1;
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+}
+
+.iconButton:hover {
+    color: #b3b3b0;
+}
+
+
+.notificationBadge {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 14px;
+    height: 14px;
+    background-color: #e50914;
+    border-radius: 50%;
+}
+
+
+.profileContainer {
+    position: relative;
+}
+
+.profileButton {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #f5f5f1;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.profileButton:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.profileAvatar {
+    width: 32px;
+    height: 32px;
+    background-color: #564d4d;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f5f5f1;
+    font-size: 16px;
+}
