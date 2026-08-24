@@ -1,7 +1,7 @@
 import KillerSally from '../assets/image/10061.jpg'
 import Pepsi from '../assets/image/10066.jpg'
 import FitForTv from '../assets/image/10067.jpg'
-import champion from '../assets/image/10079.jpg'
+import champion from '../assets/image/10080.jpg'
 import TheArt from '../assets/image/10072.jpg'
 import coldStorage from '../assets/image/coldStorage.webp'
 import hamnet from '../assets/image/hamnet.webp'
@@ -9,7 +9,7 @@ import hoppers from '../assets/image/hoppers.webp'
 import marshals from '../assets/image/marshals.webp'
 import monarch from '../assets/image/monarchLegacyOfMonsters.webp'
 import pursuit from '../assets/image/pursuitOfJade.webp'
-import scream from '../assets/image/pursuitOfJade.webp'
+import scream from '../assets/image/scream.webp'
 import TheBride from '../assets/image/TheBride.webp'
 import Vladimir from '../assets/image/vladimir.webp'
 import YoungSherlock from '../assets/image/youngSherlock.webp'
@@ -95,7 +95,7 @@ export const movies = [
     genres: ["Adventure", "Fantasy"],
     badge: "Recently added"
   },
-   {
+  {
     id: 9,
     title: "Marshals",
     poster_path: marshals,
