@@ -1,0 +1,36 @@
+.title {
+    color: white;
+    margin-top: 0;
+}
+
+.Row {
+    position: relative;
+    width: 100%;
+}
+
+.Row :global(.swiper) {
+    width: 95%;
+    height: 265px;
+    padding: 0 5px;
+}
+
+.Row :global(.swiper-slide) {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+/* LEFT + RIGHT ARROWS */
+.Row :global(.swiper-button-prev),
+.Row :global(.swiper-button-next) {
+    color: white !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    z-index: 10;
+}
+
+/* Arrow size */
+.Row :global(.swiper-button-prev::after),
+.Row :global(.swiper-button-next::after) {
+    font-size: 18px !important;
+}

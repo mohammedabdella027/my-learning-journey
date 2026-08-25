@@ -1,4 +1,9 @@
 /*  header part */
+body{
+    margin: 0;
+    padding: 0;
+}
+
 .header {
     background: transparent;
     padding: 16px 0;

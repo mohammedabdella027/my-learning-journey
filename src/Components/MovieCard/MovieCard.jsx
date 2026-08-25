@@ -12,12 +12,12 @@ function MovieCard({ movie }) {
     return (
         <div className={styles.cardWrapper}>
             {/* poster image */}
-            <img className={styles.poster} src={movie.poster_path} alt="poster image" />
+            <img className={styles.poster} src={movie?.poster_path} alt="poster image" />
 
             {/* hover card  */}
             <div className={styles.hoverCard}>
                 {/* img  */}
-                <img className={styles.hoverImage} src={movie.poster_path} alt="hover image" />
+                <img className={styles.hoverImage} src={movie?.poster_path} alt="hover image" />
 
                 {/* badge */}
                 <div className={styles.badge}>Recently added</div>
