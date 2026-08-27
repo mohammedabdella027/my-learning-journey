@@ -1,0 +1,158 @@
+.footer {
+    width: 100%;
+    background-color: #141414;
+    color: #737373;
+    padding: 55px 0 30px;
+}
+
+.container {
+    width: min(90%, 1000px);
+    margin: 0 auto;
+}
+
+/* =========================
+    SOCIAL MEDIA
+========================= */
+
+.socials {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-bottom: 18px;
+}
+
+.socialLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #fff;
+    font-size: 20px;
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.socialLink:hover {
+    color: #b3b3b3;
+    transform: translateY(-2px);
+}
+
+/* =========================
+    FOOTER LINKS
+========================= */
+
+.linksGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 50px;
+}
+
+.linkColumn {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.linkColumn li {
+    margin-bottom: 16px;
+}
+
+.linkColumn a {
+    color: #737373;
+    font-size: 13px;
+    line-height: 1.4;
+
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+.linkColumn a:hover {
+    color: #b3b3b3;
+    text-decoration: underline;
+}
+
+/* =========================
+    COPYRIGHT
+========================= */
+
+.copyright {
+    margin: 14px 0 0;
+
+    color: #737373;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* =========================
+    TABLET
+========================= */
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 45px 0 25px;
+    }
+
+    .container {
+        width: 88%;
+    }
+
+    .linksGrid {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 35px;
+        row-gap: 5px;
+    }
+
+    .socials {
+        gap: 24px;
+    }
+
+    .socialLink {
+        font-size: 19px;
+    }
+}
+
+/* =========================
+    MOBILE
+========================= */
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 35px 0 25px;
+    }
+
+    .container {
+        width: 85%;
+    }
+
+    .socials {
+        gap: 22px;
+        margin-bottom: 25px;
+    }
+
+    .socialLink {
+        font-size: 18px;
+    }
+
+    .linksGrid {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 25px;
+    }
+
+    .linkColumn li {
+        margin-bottom: 15px;
+    }
+
+    .linkColumn a {
+        font-size: 12px;
+    }
+
+    .copyright {
+        margin-top: 15px;
+        font-size: 11px;
+    }
+}

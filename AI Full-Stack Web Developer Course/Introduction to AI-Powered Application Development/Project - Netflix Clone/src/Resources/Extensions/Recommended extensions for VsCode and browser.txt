@@ -1,0 +1,19 @@
+Recommended extensions for VsCode 
+
+VsCode Extension
+
+	Auto close Tag
+	Auto Import ES6,TS,JSX,TSX
+	Auto Rename Tag
+	Prettier 
+
+	Snipped 
+	Stylelint 
+	npm Intellisense
+	Path Intellisense
+	Reactjs Code Snippets 
+	
+
+browser extension 
+
+JSON formatter extension for chrome

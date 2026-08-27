@@ -1,0 +1,19 @@
+CSS positioning : https://www.youtube.com/watch?v=90dNru2ddJo
+                  https://www.youtube.com/watch?v=jx5jmI0UlXU
+
+emmet : https://www.youtube.com/watch?v=F_0rS5DDi3M
+
+favIconDownloader :https://www.faviconextractor.com/
+
+grid garden: https://cssgridgarden.com/
+
+glexy frog :https://flexboxfroggy.com/
+
+align item and justify content :https://codingfantasy.com/games/flexboxadventure/play
+
+
+ • 
+
+
+const IMAGE_BASE = "https://image.tmdb.org/t/p/w500"
+const BANNER_BASE= "https://image.tmdb.org/t/p/original/"

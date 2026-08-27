@@ -1,0 +1,4 @@
+Non-AI Integration
+    login and signup page with authentication 
+AI Integration
+    - Movie suggestion based on Liked moves
