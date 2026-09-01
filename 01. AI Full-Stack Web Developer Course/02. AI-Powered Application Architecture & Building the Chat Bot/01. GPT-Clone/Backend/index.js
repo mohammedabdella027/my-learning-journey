@@ -4,6 +4,14 @@ import db from './db.config.js';
 
 const app = express();
 
+app.post('api/chat/conversation', (req, res) => {
+    res.send('post method')
+})
+
+app.get('api/chat/conversation', (req,res) => {
+    res.send('get method')
+})
+
 async function startServer () {
     try {
         const connection = await db.getConnection();
