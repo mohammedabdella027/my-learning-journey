@@ -2,7 +2,7 @@ import 'dotenv/config'
 
 
 import express from 'express';
-import db from './db.config.js';
+import db from './db/db.config.js';
 import mainRouter from './src/api/main.routes.js';
 import { errorHandler } from './src/middleware/error-handler.js';
 
