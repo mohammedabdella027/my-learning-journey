@@ -1,18 +1,23 @@
 import 'dotenv/config'
+
+
 import express from 'express';
 import db from './db.config.js';
+import mainRouter from './src/api/main.routes.js';
 
 const app = express();
 
-app.post('api/chat/conversation', (req, res) => {
-    res.send('post method')
-})
+app.use('/api', mainRouter);
 
-app.get('api/chat/conversation', (req,res) => {
-    res.send('get method')
-})
+// app.post('api/chat/conversation', (req, res) => {
+//     res.send('post method')
+// })
 
-async function startServer () {
+// app.get('api/chat/conversation', (req,res) => {
+//     res.send('get method')
+// })
+
+async function startServer() {
     try {
         const connection = await db.getConnection();
         connection.release();
@@ -26,7 +31,7 @@ async function startServer () {
             console.log("server is running on port http://localhost:3000")
         });
     } catch (err) {
-        console.error('error starting server: ', err.message)
+        console.error('error starting server: ', err)
     }
 }
 
