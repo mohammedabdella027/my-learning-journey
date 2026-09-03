@@ -1,4 +1,8 @@
 import db from '../../../../db/db.config.js';
+import { GoogleGenAI } from '@google/genai';
+
+const GEMINI_MODEL = process.env.GEMINI_MODEL || "gemini-2.0-flash-lite";
+const geminiClient = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
 // get recent conversation row from db
 const getRecentConversationRows = async (limit = 5) => {
