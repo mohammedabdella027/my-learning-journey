@@ -5,7 +5,7 @@ const GEMINI_MODEL = process.env.GEMINI_MODEL || "gemini-3.5-flash-lite";
 const geminiClient = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
 // get recent conversation row from db
-const getRecentConversationRows = async (limit = 5) => {
+export const getRecentConversationRows = async (limit = 5) => {
     const normalizedLimit = Number.parseInt(limit, 10);
     const safeLimit = 
     Number.isNaN(normalizedLimit) || normalizedLimit <= 0
