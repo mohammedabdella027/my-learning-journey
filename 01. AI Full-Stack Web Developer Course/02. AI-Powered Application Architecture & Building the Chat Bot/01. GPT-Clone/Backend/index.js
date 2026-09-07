@@ -2,11 +2,19 @@ import 'dotenv/config'
 
 
 import express from 'express';
+import cors from 'cors';
 import db from './db/db.config.js';
 import mainRouter from './src/api/main.routes.js';
 import { errorHandler } from './src/middleware/error-handler.js';
 
 const app = express();
+
+// Allow cross-origin requests from the frontend
+app.use(
+    cors({
+        origin: 'http://localhost:5173',
+    }));
+
 app.use(express.json())
 
 app.use('/api', mainRouter);
