@@ -1,0 +1,17 @@
+{
+  "name": "02_building_a_semantic_comparator_demo_practice",
+  "version": "1.0.0",
+  "description": "Demo - for practice purpose",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@google/genai": "^2.22.0",
+    "dotenv": "^17.4.2"
+  }
+}
