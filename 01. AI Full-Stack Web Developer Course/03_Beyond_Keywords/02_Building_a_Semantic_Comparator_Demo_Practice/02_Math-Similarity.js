@@ -7,6 +7,22 @@ if (!GEMINI_API_KEY) {
     throw new Error('GEMINI_API_KEY environment variable is required');
 }
 
+// =======================================================================================
+// MATHEMATICAL FORMULA: COSINE SIMILARITY
+//
+// Formula:  Cosine Similarity = (A · B) / (||A|| * ||B||)
+//
+// Where:
+//   - A · B        = Dot Product (sum of matching element products: ∑(A[i] * B[i]))
+//   - ||A||        = Magnitude of Vector A (sqrt(∑(A[i]²)))
+//   - ||B||        = Magnitude of Vector B (sqrt(∑(B[i]²)))
+//   - Score Range  = -1.0 (Opposite) to 1.0 (Identical Direction)
+// =======================================================================================
+
+
+// ----------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------
 /**
  * Naive Cosine Similarity Implementation
  * 
@@ -58,6 +74,22 @@ function cosineSimilarity (vecA, vecB) {
 console.log(cosineSimilarity ([1,9], [2,0]))
 
 // ---------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------
+
+/**
+ * Optimized Single-Pass Cosine Similarity Implementation
+ * 
+ * ADVANTAGES:
+ * - Single-Pass Efficiency: Computes dot product and both vector magnitudes in a single O(N) loop iteration.
+ * - Reduced Latency: Significantly faster execution when processing high-dimensional embedding vectors (e.g., 768d).
+ * - Division-by-Zero Safety: Explicitly checks for zero-magnitude vectors to prevent NaN results.
+ * 
+ * COMPUTATIONAL COMPLEXITY:
+ * - Time Complexity: O(N) where N is the vector dimensionality (3x faster loop execution than naive version).
+ * - Space Complexity: O(1) auxiliary space.
+ */
 
 function cosineSimilarity02 (vecA, vecB) {
     // 0. Check if the vectors have the same length
