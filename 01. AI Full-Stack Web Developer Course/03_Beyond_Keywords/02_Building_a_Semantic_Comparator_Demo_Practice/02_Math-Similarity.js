@@ -7,6 +7,20 @@ if (!GEMINI_API_KEY) {
     throw new Error('GEMINI_API_KEY environment variable is required');
 }
 
+/**
+ * Naive Cosine Similarity Implementation
+ * 
+ * ADVANTAGES:
+ * - High Readability: Step-by-step separation makes the mathematical formula crystal clear.
+ * - Educational: Excellent for deeply understanding dot product and magnitude mechanics.
+ * 
+ * DISADVANTAGES:
+ * - Performance Overhead: Multiple independent loops increase computational cost (O(3N) iterations).
+ * - Latency: Slower execution when processing large multi-dimensional vectors (e.g., 768d or 1536d embeddings).
+ * 
+ * NOTE: Written for practice and conceptual learning; refactoring to a single-pass loop is recommended for production.
+ */
+
 // Cosine Similarity = (A . B) / (||A|| * ||B||)
 
 function cosineSimilarity (vecA, vecB) {
