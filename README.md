@@ -2,8 +2,8 @@
 
 **A personal archive of everything I'm learning, building, and figuring out — one project at a time.**
 
-![Status](https://img.shields.io/badge/status-actively%20learning-brightgreen)
-![Focus](https://img.shields.io/badge/current%20focus-AI--Powered%20Apps-blueviolet)
+![Status](https://img.shields.io/badge/status-actively%20building%20%26%20learning-brightgreen)
+![Focus](https://img.shields.io/badge/focus-Full--Stack%20Practical%20Projects%20(EduManage)%20%26%20AI%20Integration-blueviolet)
 ![Type](https://img.shields.io/badge/type-personal%20learning%20repo-informational)
 
 ---
@@ -12,7 +12,15 @@
 
 This isn't a portfolio and it isn't a single-course repo — it's my **long-term learning journal**. It holds my notes, practice work, experiments, and projects as I grow as a developer.
 
-Right now, the biggest thread running through it is the **AI Full-Stack Web Developer Course**, but this repository is meant to outlast any one course. As I pick up new skills, tools, and ideas, they'll find a home here too.
+For a while, the biggest thread running through it was the **AI Full-Stack Web Developer Course**. Right now, though, I've shifted my energy toward **practical full-stack project work** — building something real from the ground up instead of moving through more course modules. The course isn't going anywhere; it's paused, not dropped, and I expect to pick it back up in the coming weeks.
+
+---
+
+## 📍 Current Focus
+
+**Building `02-edumanage-system`** — a full-stack project I'm starting from scratch, currently at the frontend setup stage: `client/` initialized with **Vite, React, and Tailwind CSS**.
+
+**`01. AI Full-Stack Web Developer Course` is temporarily paused.** I stepped away right around the Vector Embeddings and Semantic Comparator modules, and I'll be resuming that track in a few weeks once I've made solid progress on EduManage.
 
 ---
 
@@ -30,23 +38,28 @@ Programming & JavaScript Foundations
 Backend & React Development
           │
           ▼
-Introduction to AI-Powered Application Development   ← CURRENT
+Introduction to AI-Powered Application Development
+          │
+          ▼
+AI-Powered Application Architecture, Vectors & Embeddings   ⏸ PAUSED — resuming soon
+          │
+          ▼
+Practical Full-Stack Project Work (EduManage System)   ← CURRENT FOCUS
 ```
 
-Each stage built on the last — from styling my first web page to now exploring how AI is reshaping the way applications get built.
+Each stage built on the last — from styling my first web page, through AI foundations and embeddings, to now applying it all in a real, practical build.
 
 ---
 
 ## 📍 Current Progress
 
-| Learning Area                                        | Status         |
-| ----------------------------------------------------- | -------------- |
-| Web Development Foundations                           | ✅ Completed    |
-| Programming & JavaScript Foundations                  | ✅ Completed    |
-| Backend & React Development                           | ✅ Completed    |
-| Introduction to AI-Powered Application Development     | 🔄 In Progress |
-
-I'm currently focused on **Introduction to AI-Powered Application Development**, working through AI foundations and building my first AI-relevant project.
+| Learning Area                                                  | Status                                         |
+| ---------------------------------------------------------------- | ------------------------------------------------- |
+| Web Development Foundations                                      | ✅ Completed                                        |
+| Programming & JavaScript Foundations                              | ✅ Completed                                        |
+| Backend & React Development                                      | ✅ Completed                                        |
+| `01. AI Full-Stack Web Developer Course`                          | ⏸ Paused (Resuming soon)                          |
+| `02-edumanage-system`                                             | 🔄 In Progress (Active Focus — Frontend Setup Complete) |
 
 ---
 
@@ -61,10 +74,31 @@ Programming fundamentals, JavaScript, algorithms, the DOM, event handling, jQuer
 ### ⚙️ Backend & React Development
 Git, Node.js, Express.js, MySQL, React, asynchronous JavaScript, React Hooks, APIs, and routing.
 
-### 🤖 Introduction to AI-Powered Application Development *(current)*
+### 🤖 AI Full-Stack Web Developer Course *(paused)*
 - Project - Netflix Clone
 - AI Foundations, History & Terminologies
 - The Rise of AI-Powered Applications - From Traditional Logic to AI-Powered Apps
+- AI-Powered Application Architecture & Building the Chat Bot (GPT-Clone)
+- Beyond Keywords: The Mathematics of Meaning — Vector Embeddings, Cosine Similarity, and a Semantic Comparator demo
+
+This module track is on hold while I focus on EduManage, but it's very much still part of the plan.
+
+### 🏗️ Practical Full-Stack Projects *(current)*
+- **EduManage System** — a full-stack app I'm building outside the course structure, applying everything from the earlier modules in a real project. Frontend (`client/`) is set up with Vite, React, and Tailwind CSS; backend and further features are still to come.
+
+---
+
+## 🛠️ Technologies
+
+**Frontend:** HTML · CSS · Bootstrap · Tailwind CSS · JavaScript · React (Vite)
+
+**Backend:** Node.js · Express.js
+
+**Database:** MySQL
+
+**AI / SDKs *(learning & integration)*:** Google GenAI SDK (`gemini-embedding-001`) · Vector Embeddings · Cosine Similarity
+
+**Tools:** Git · GitHub · VS Code
 
 ---
 
@@ -72,19 +106,19 @@ Git, Node.js, Express.js, MySQL, React, asynchronous JavaScript, React Hooks, AP
 
 ```text
 my-learning-journey/
-│
-├── AI Full-Stack Web Developer Course/
-│   │
-│   ├── Web Development Foundations/
-│   ├── Programming & JavaScript Foundations/
-│   ├── Backend & React Development/
-│   │
-│   └── Introduction to AI-Powered Application Development/
-│       │
-│       ├── Project - Netflix Clone/
-│       ├── AI Foundations, History & Terminologies/
-│       └── The Rise of AI-Powered Applications - From Traditional Logic to AI-Powered Apps/
-│
+├── 01. AI Full-Stack Web Developer Course/
+│   ├── 01. Introduction to AI-Powered Application Development/
+│   │   ├── 01. Project - Netflix Clone/
+│   │   ├── 02. AI Foundations, History & Terminologies/
+│   │   └── 03. The Rise of AI-Powered Applications - From Traditional Logic to AI-Powered Apps/
+│   ├── 02. AI-Powered Application Architecture & Building the Chat Bot/
+│   │   ├── 01. GPT-Clone/
+│   │   └── 02. AI Architecture, Model Selection & Advanced Terminology/
+│   └── 03_Beyond_Keywords/
+│       ├── 01_The_Mathematics_of_Meaning/
+│       └── 02_Building_a_Semantic_Comparator_Demo_Practice/
+├── 02-edumanage-system/
+│   └── client/  # Vite + React + Tailwind CSS setup
 └── README.md
 ```
 
@@ -99,6 +133,14 @@ A small educational project built to practice front-end development:
 - Deployed using Vercel
 
 Full details live inside its own project folder.
+
+### 🏫 About EduManage System
+
+A practical full-stack project, separate from the course curriculum, meant to put my accumulated skills to work on something real:
+
+- `client/` initialized with Vite, React, and Tailwind CSS
+- Backend and further features not yet started
+- Details and progress will live inside its own project folder as the build continues
 
 ---
 
@@ -117,20 +159,6 @@ This is a **working repository** — it's meant to show real, ongoing learning, 
 
 ---
 
-## 🛠️ Technologies
-
-**Frontend:** HTML · CSS · Bootstrap · JavaScript · React
-
-**Backend:** Node.js · Express.js
-
-**Database:** MySQL
-
-**Tools:** Git · GitHub · VS Code
-
-**Current Area:** AI / AI-Powered Application Development
-
----
-
 ## 💡 Learning Philosophy
 
 I learn best by building, not just watching. My approach here is:
@@ -145,12 +173,13 @@ I learn best by building, not just watching. My approach here is:
 
 ## ✅ Progress Tracker
 
-| # | Learning Area                                          | Status         |
-| - | -------------------------------------------------------- | -------------- |
-| 1 | Web Development Foundations                              | ✅ Completed    |
-| 2 | Programming & JavaScript Foundations                     | ✅ Completed    |
-| 3 | Backend & React Development                              | ✅ Completed    |
-| 4 | Introduction to AI-Powered Application Development        | 🔄 In Progress |
+| # | Learning Area                                          | Status                                              |
+| - | -------------------------------------------------------- | ------------------------------------------------------ |
+| 1 | Web Development Foundations                              | ✅ Completed                                            |
+| 2 | Programming & JavaScript Foundations                     | ✅ Completed                                            |
+| 3 | Backend & React Development                              | ✅ Completed                                            |
+| 4 | `01. AI Full-Stack Web Developer Course`                  | ⏸ Paused (Resuming soon)                              |
+| 5 | `02-edumanage-system`                                     | 🔄 In Progress (Active Focus — Frontend Setup Complete) |
 
 ---
 
