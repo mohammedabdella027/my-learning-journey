@@ -7,7 +7,7 @@ const studentRouter = express.Router();
 // studentRouter.post('/routes', createRoutesController)
 
 
-// Get /api/student/routes
-studentRouter.get('/routes', getStudentController)
+// Get /api/students/
+studentRouter.get('/', getStudentController)
 
 export default studentRouter;
