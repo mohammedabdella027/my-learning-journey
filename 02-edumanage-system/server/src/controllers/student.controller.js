@@ -1,4 +1,4 @@
-import { getStudentInfo, getStudentById } from "../service/student.service.js";
+import { getStudentInfo, getStudentById, createStudentInfo } from "../service/student.service.js";
 
 export const getStudentController = async (req, res) => {
     try {
@@ -31,5 +31,23 @@ export const getStudentIdController = async (req, res) => {
             success: false,
             message: error.message
         });
+    }
+}
+
+export const createStudentController = async (req, res) => {
+    try {
+        const newStudent = await createStudentInfo(req.body);
+    
+        res.status(201).json({
+            success: true,
+            message: "Student created successfully",
+            data: newStudent
+        })
+    }
+    catch (error) {
+        res.status(error.status || 500).json({
+            success: false,
+            message: error.message
+        })
     }
 }
