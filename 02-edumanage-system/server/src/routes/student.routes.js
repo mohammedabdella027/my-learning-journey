@@ -1,5 +1,5 @@
 import express from 'express';
-import { getStudentController } from '../controllers/student.controller.js';
+import { getStudentController, getStudentIdController } from '../controllers/student.controller.js';
 
 const studentRouter = express.Router();
 
@@ -9,5 +9,8 @@ const studentRouter = express.Router();
 
 // Get /api/students/
 studentRouter.get('/', getStudentController)
+
+// Get /api/students/id
+studentRouter.get('/:id', getStudentIdController)
 
 export default studentRouter;
