@@ -20,7 +20,15 @@ export const getStudentById = async (id) => {
 export const createStudentInfo = async (studentData) => {
     const {name, email, course} = studentData;
 
-    const [result] = await db.query('INSERT INTO students (name, email, course) VALUE (?, ?, ?)', [name, email, course]);
+    // 1. Validate that all required fields are present
+    if (!name || !email || !course) {
+        const error = new Error("All fields (name, email, course) are required");
+        error.status = 400;
+        throw error
+    }
+
+    // 2. Proceed with database insertion if validation passes
+    const [result] = await db.query('INSERT INTO students (name, email, course) VALUES (?, ?, ?)', [name, email, course]);
 
     return {id: result.insertId, name, email, course}
 }
