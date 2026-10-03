@@ -45,3 +45,23 @@ export const deleteStudentInfo = async (id) => {
 
     return {message: "Student deleted successfully"}
 }
+
+export const updateStudentInfo = async (id, studentData) => {
+    const {name, email, course} = studentData;
+
+    if (!name || !email || !course) {
+        const error = new Error("All fields (name, email, course) are required for update");
+        error.status = 400;
+        throw error;
+    };
+
+    const [result] = await db.query('UPDATE students SET name = ?, email = ?, course = ? WHERE id = ?', [name, email, course, id]);
+
+    if (result.affectedRows === 0) {
+        const error = new Error("Student not found.");
+        error.status = 404;
+        throw error;
+    };
+
+    return {id, name, email, course}
+}

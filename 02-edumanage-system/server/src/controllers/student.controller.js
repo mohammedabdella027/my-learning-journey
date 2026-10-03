@@ -1,4 +1,4 @@
-import { getStudentInfo, getStudentById, createStudentInfo, deleteStudentInfo } from "../service/student.service.js";
+import { getStudentInfo, getStudentById, createStudentInfo, deleteStudentInfo, updateStudentInfo } from "../service/student.service.js";
 
 export const getStudentController = async (req, res) => {
     try {
@@ -66,6 +66,26 @@ export const deleteStudentController = async (req, res) => {
         res.status(error.status || 500).json({
             success: false,
             message: error.message
+        })
+    }
+}
+
+export const updateStudentController = async (req, res) => {
+    try {
+        const {id} = req.params;
+
+        const updateStudent = await updateStudentInfo(id, req.body);
+
+        res.status(200).json({
+            success: true,
+            message: "Students Updated successfully",
+            data: updateStudent
+        })
+    }
+    catch (error) {
+        res.status(error.status || 500).json({
+            success: false,
+            message: error.message,
         })
     }
 }
