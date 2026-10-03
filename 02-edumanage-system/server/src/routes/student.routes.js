@@ -1,5 +1,5 @@
 import express from 'express';
-import { getStudentController, getStudentIdController, createStudentController } from '../controllers/student.controller.js';
+import { getStudentController, getStudentIdController, createStudentController, deleteStudentController } from '../controllers/student.controller.js';
 
 const studentRouter = express.Router();
 
@@ -12,5 +12,8 @@ studentRouter.get('/', getStudentController)
 
 // Get /api/students/id
 studentRouter.get('/:id', getStudentIdController)
+
+// Delete /api/students/id
+studentRouter.delete('/:id', deleteStudentController)
 
 export default studentRouter;

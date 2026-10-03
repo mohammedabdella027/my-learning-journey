@@ -32,3 +32,16 @@ export const createStudentInfo = async (studentData) => {
 
     return {id: result.insertId, name, email, course}
 }
+
+export const deleteStudentInfo = async (id) => {
+    const [result] = await db.query('DELETE FROM students WHERE id = ?', [id]);
+
+    // If affectedRows is 0, the student ID doesn't exist in the database
+    if (result.affectedRows === 0) {
+        const error = new Error('Student not found.')
+        error.status = 404;
+        throw error;
+    }
+
+    return {message: "Student deleted successfully"}
+}
