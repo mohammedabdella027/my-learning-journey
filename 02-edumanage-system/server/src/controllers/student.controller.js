@@ -1,6 +1,6 @@
 import { getStudentInfo, getStudentById, createStudentInfo, deleteStudentInfo, updateStudentInfo } from "../service/student.service.js";
 
-export const getStudentController = async (req, res) => {
+export const getStudentController = async (req, res, next) => {
     try {
         const result = await getStudentInfo();
 
@@ -11,11 +11,11 @@ export const getStudentController = async (req, res) => {
         })
     } 
     catch (error) {
-        res.status(500).json({ error: error.message })
+        next(error);
     }
 }
 
-export const getStudentIdController = async (req, res) => {
+export const getStudentIdController = async (req, res, next) => {
     try {
         const {id} = req.params;
         const result = await getStudentById(id);
@@ -27,14 +27,11 @@ export const getStudentIdController = async (req, res) => {
         })
     }
     catch (error) {
-        res.status(error.status ||500).json({
-            success: false,
-            message: error.message
-        });
+        next(error);
     }
 }
 
-export const createStudentController = async (req, res) => {
+export const createStudentController = async (req, res, next) => {
     try {
         const newStudent = await createStudentInfo(req.body);
     
@@ -45,14 +42,11 @@ export const createStudentController = async (req, res) => {
         })
     }
     catch (error) {
-        res.status(error.status || 500).json({
-            success: false,
-            message: error.message
-        })
+        next(error);
     }
 }
 
-export const deleteStudentController = async (req, res) => {
+export const deleteStudentController = async (req, res, next) => {
     try{
         const {id} = req.params;
         await deleteStudentInfo(id);
@@ -63,14 +57,11 @@ export const deleteStudentController = async (req, res) => {
         })
     }
     catch (error) {
-        res.status(error.status || 500).json({
-            success: false,
-            message: error.message
-        })
+        next(error);
     }
 }
 
-export const updateStudentController = async (req, res) => {
+export const updateStudentController = async (req, res, next) => {
     try {
         const {id} = req.params;
 
@@ -83,9 +74,6 @@ export const updateStudentController = async (req, res) => {
         })
     }
     catch (error) {
-        res.status(error.status || 500).json({
-            success: false,
-            message: error.message,
-        })
+        next(error);
     }
 }

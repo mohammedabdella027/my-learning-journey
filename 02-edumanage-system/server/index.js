@@ -5,6 +5,7 @@ import express, { json } from 'express';
 import cors from 'cors';
 import mainRouter from './src/main.routes.js';
 import db from './config/db.js'
+import { errorHandler } from './src/middleware/error.middleware.js';
 
 const app = express();
 
@@ -17,6 +18,9 @@ app.use(
 app.use(express.json())
 
 app.use('/api', mainRouter)
+
+// Global Error Handler
+app.use(errorHandler);
 
 async function startServer () {
     try {
