@@ -4,15 +4,20 @@ import { getAllStudents } from '../services/studentService';
 function DashboardPage() {
     // 1. State Management hooks
     const [students, setStudents] = useState([]);
+    const [loading, setLoading] = useState(true)
+    const [error, setError] = useState(null)
 
     // 2. Side Effect hook to fetch data on component mount
     useEffect(() => {
         const fetchStudents = async () => {
             try {
+                setLoading(true)
                 const data = await getAllStudents();
                 setStudents(data);
             } catch (err) {
-                console.error('Failed to fetch students:', err);
+                setError(err.message || 'Failed to fetch students');
+            } finally {
+                setLoading(false)
             }
         };
 
@@ -31,8 +36,22 @@ function DashboardPage() {
                 </button>
             </div>
 
+            {/* Loading State */}
+            {loading && (
+                <div className="bg-white rounded-lg shadow-sm p-8 text-center text-slate-500 border border-slate-200">
+                    Loading student records...
+                </div>
+            )}
+
+            {/* Error State */}
+            {error && (
+                <div className="bg-red-50 rounded-lg shadow-sm p-4 mb-6 text-red-700 border border-red-200 text-sm">
+                    <span className="font-semibold">Error: </span> {error}
+                </div>
+            )}
+
             {/* Data Display Section (Responsive Table Card) */}
-            {(
+            {!loading && !error &&(
                 <div className="bg-white rounded-lg shadow-sm overflow-hidden border border-slate-200">
                     <div className="overflow-x-auto">
                         <table className="w-full text-left border-collapse min-w-150">
