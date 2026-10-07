@@ -51,7 +51,7 @@ function DashboardPage() {
             )}
 
             {/* Data Display Section (Responsive Table Card) */}
-            {!loading && !error &&(
+            {!loading && !error && (
                 <div className="bg-white rounded-lg shadow-sm overflow-hidden border border-slate-200">
                     <div className="overflow-x-auto">
                         <table className="w-full text-left border-collapse min-w-150">
@@ -94,6 +94,30 @@ function DashboardPage() {
                     </div>
                 </div>
             )}
+
+            <form className="flex flex-col sm:flex-row gap-3 my-6 p-4 bg-white rounded-xl border border-slate-200 shadow-sm items-center">
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Name"
+                    className="w-full sm:flex-1 px-3 py-2 bg-slate-50 focus:bg-white border border-slate-200 rounded-lg text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all"
+                />
+                <input
+                    type="text"
+                    name="email"
+                    placeholder="email"
+                    className="w-full sm:flex-1 px-3 py-2 bg-slate-50 focus:bg-white border border-slate-200 rounded-lg text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all"
+                />
+                <input
+                    type="text"
+                    name="course"
+                    placeholder="course"
+                    className="w-full sm:flex-1 px-3 py-2 bg-slate-50 focus:bg-white border border-slate-200 rounded-lg text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all"
+                />
+                <button className="w-full sm:w-auto px-5 py-2 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-medium rounded-lg text-sm shadow-sm hover:shadow transition-all duration-200 whitespace-nowrap cursor-pointer">
+                    Add Student
+                </button>
+            </form>
         </div>
     )
 }
