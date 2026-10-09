@@ -6,7 +6,8 @@ function DashboardPage() {
     const [students, setStudents] = useState([]);
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
-    const [dataForm, setDataForm] = useState({name: '', email: '', course:''});
+    const [dataForm, setDataForm] = useState({ name: '', email: '', course: '' });
+    const [isOpen, setIsOpen] = useState(false);
 
     // 2. Side Effect hook to fetch data on component mount
     useEffect(() => {
@@ -28,7 +29,7 @@ function DashboardPage() {
     // 3. submit student informations
     // Dynamic handler for all input changes
     const handleChange = (e) => {
-        setDataForm({...dataForm, [e.target.name]: [e.target.value]})
+        setDataForm({ ...dataForm, [e.target.name]: [e.target.value] })
     }
 
     // submit handler
@@ -40,12 +41,23 @@ function DashboardPage() {
 
             setStudents([...students, createStudentInfo])
 
-            setDataForm({name: '', email: '', course: ''})
+            setDataForm({ name: '', email: '', course: '' })
         }
         catch (err) {
             setError(err.message || 'Failed to add student')
         }
     }
+
+    // add students button handler
+    const handleClick = () => {
+        setIsOpen(true)
+    }
+
+    // add students cancel button handler
+    const handleCancel = () => {
+        setIsOpen(false)
+    }
+
     return (
         <div className="p-4 sm:p-8 max-w-7xl mx-auto font-sans bg-slate-50 min-h-screen">
             {/* Header Section */}
@@ -54,10 +66,53 @@ function DashboardPage() {
                     <h1 className="text-2xl font-bold text-slate-800 mb-1">Student Management</h1>
                     <p className="text-sm text-slate-500">Manage and monitor registered students</p>
                 </div>
-                <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded-md transition duration-200 shadow-sm w-full sm:w-auto text-center">
+                <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded-md transition duration-200 shadow-sm w-full sm:w-auto text-center"
+                    onClick={handleClick}>
                     + Add New Student
                 </button>
             </div>
+
+            {isOpen && (
+                <form className="flex flex-col sm:flex-row gap-3 my-6 p-4 bg-white rounded-xl border border-slate-200 shadow-sm items-center"
+                    onSubmit={handleSubmit}>
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Name"
+                        value={dataForm.name}
+                        onChange={handleChange}
+                        required
+                        className="w-full sm:flex-1 px-3 py-2 bg-slate-50 focus:bg-white border border-slate-200 rounded-lg text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all"
+                    />
+                    <input
+                        type="text"
+                        name="email"
+                        placeholder="email"
+                        value={dataForm.email}
+                        onChange={handleChange}
+                        required
+                        className="w-full sm:flex-1 px-3 py-2 bg-slate-50 focus:bg-white border border-slate-200 rounded-lg text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all"
+                    />
+                    <input
+                        type="text"
+                        name="course"
+                        placeholder="course"
+                        value={dataForm.course}
+                        onChange={handleChange}
+                        required
+                        className="w-full sm:flex-1 px-3 py-2 bg-slate-50 focus:bg-white border border-slate-200 rounded-lg text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all"
+                    />
+                    <button className="w-full sm:w-auto px-5 py-2 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-medium rounded-lg text-sm shadow-sm hover:shadow transition-all duration-200 whitespace-nowrap cursor-pointer"
+                        type='submit'>
+                        Add Student
+                    </button>
+                    <button className='w-full sm:w-auto px-5 py-2 bg-red-600 hover:bg-red-700 active:bg-red-800 text-white font-medium rounded-lg text-sm shadow-sm hover:shadow transition-all duration-200 whitespace-nowrap cursor-pointer'
+                        type='reset'
+                        onClick={handleCancel}>
+                        Cancel
+                    </button>
+                </form>
+            )}
 
             {/* Loading State */}
             {loading && (
@@ -117,41 +172,6 @@ function DashboardPage() {
                     </div>
                 </div>
             )}
-
-            <form className="flex flex-col sm:flex-row gap-3 my-6 p-4 bg-white rounded-xl border border-slate-200 shadow-sm items-center"
-            onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    name="name"
-                    placeholder="Name"
-                    value={dataForm.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full sm:flex-1 px-3 py-2 bg-slate-50 focus:bg-white border border-slate-200 rounded-lg text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all"
-                />
-                <input
-                    type="text"
-                    name="email"
-                    placeholder="email"
-                    value={dataForm.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full sm:flex-1 px-3 py-2 bg-slate-50 focus:bg-white border border-slate-200 rounded-lg text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all"
-                />
-                <input
-                    type="text"
-                    name="course"
-                    placeholder="course"
-                    value={dataForm.course}
-                    onChange={handleChange}
-                    required
-                    className="w-full sm:flex-1 px-3 py-2 bg-slate-50 focus:bg-white border border-slate-200 rounded-lg text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all"
-                />
-                <button className="w-full sm:w-auto px-5 py-2 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-medium rounded-lg text-sm shadow-sm hover:shadow transition-all duration-200 whitespace-nowrap cursor-pointer"
-                type='submit'>
-                    Add Student
-                </button>
-            </form>
         </div>
     )
 }
