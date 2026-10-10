@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getAllStudents, createStudent } from '../services/studentService';
+import { getAllStudents, createStudent, DeleteStudent } from '../services/studentService';
 
 function DashboardPage() {
     // 1. State Management hooks
@@ -56,6 +56,20 @@ function DashboardPage() {
     // add students cancel button handler
     const handleCancel = () => {
         setIsOpen(false)
+    }
+
+    // Delete student handler
+    const handleDelete = async (id) => {
+        if(!window.confirm('Delete this student?')) return;
+
+        try {
+            await DeleteStudent(id)
+
+            setStudents(students.filter((student) => student.id !== id))
+        }
+        catch (err) {
+            setError(err.message || 'Failed to delete student')
+        }
     }
 
     return (
@@ -160,7 +174,8 @@ function DashboardPage() {
                                                 <button className="px-3  py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded text-xs font-medium transition">
                                                     Edit
                                                 </button>
-                                                <button className="px-3 py-1 bg-red-50 hover:bg-red-100 text-red-700 rounded text-xs font-medium transition">
+                                                <button className="px-3 py-1 bg-red-50 hover:bg-red-100 text-red-700 rounded text-xs font-medium transition"
+                                                onClick={() => handleDelete(student.id)}>
                                                     Delete
                                                 </button>
                                             </td>
