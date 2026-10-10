@@ -63,5 +63,5 @@ export const updateStudentInfo = async (id, studentData) => {
         throw error;
     };
 
-    return {id, name, email, course}
+    return {id: Number(id), name, email, course}
 }
