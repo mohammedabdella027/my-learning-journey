@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getAllStudents, createStudent, DeleteStudent } from '../services/studentService';
+import { getAllStudents, createStudent, DeleteStudent, UpdateStudent } from '../services/studentService';
 
 function DashboardPage() {
     // State
@@ -8,6 +8,7 @@ function DashboardPage() {
     const [error, setError] = useState(null);
     const [dataForm, setDataForm] = useState({ name: '', email: '', course: '' });
     const [isOpen, setIsOpen] = useState(false);
+    const [editId, setEditId] = useState(null);
 
     // Fetch all students when the component mounts
     useEffect(() => {
@@ -28,32 +29,51 @@ function DashboardPage() {
 
     // Update the form data when any input changes
     const handleChange = (e) => {
-        setDataForm({ ...dataForm, [e.target.name]: [e.target.value] });
+        setDataForm({ ...dataForm, [e.target.name]: e.target.value });
     };
 
-    // Create a new student when the form is submitted
+    // Create a new student, or update the selected one, when the form is submitted
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         try {
-            const createStudentInfo = await createStudent(dataForm);
+            if (editId) {
+                const updatedStudent = await UpdateStudent(editId, dataForm);
 
-            setStudents([...students, createStudentInfo]);
+                setStudents(students.map((student) => (student.id === editId ? updatedStudent : student)));
+                setEditId(null);
+                setIsOpen(false);
+            } else {
+                const createStudentInfo = await createStudent(dataForm);
+
+                setStudents([...students, createStudentInfo]);
+            }
 
             setDataForm({ name: '', email: '', course: '' });
         } catch (err) {
-            setError(err.message || 'Failed to add student');
+            setError(err.message || 'Failed to save student');
         }
     };
 
-    // Open the add student form
+    // Open the form in add mode
     const handleClick = () => {
+        setEditId(null);
+        setDataForm({ name: '', email: '', course: '' });
         setIsOpen(true);
     };
 
-    // Close the add student form
+    // Close the form and clear the edit state
     const handleCancel = () => {
+        setEditId(null);
+        setDataForm({ name: '', email: '', course: '' });
         setIsOpen(false);
+    };
+
+    // Fill the form with the selected student's data
+    const handleEdit = (student) => {
+        setDataForm({ name: student.name, email: student.email, course: student.course });
+        setEditId(student.id);
+        setIsOpen(true);
     };
 
     // Delete a student after the user confirms
@@ -122,7 +142,7 @@ function DashboardPage() {
                         className="w-full sm:w-auto px-5 py-2 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-medium rounded-lg text-sm shadow-sm hover:shadow transition-all duration-200 whitespace-nowrap cursor-pointer"
                         type="submit"
                     >
-                        Add Student
+                        {editId ? 'Save' : 'Add Student'}
                     </button>
                     <button
                         className="w-full sm:w-auto px-5 py-2 bg-red-600 hover:bg-red-700 active:bg-red-800 text-white font-medium rounded-lg text-sm shadow-sm hover:shadow transition-all duration-200 whitespace-nowrap cursor-pointer"
@@ -177,7 +197,10 @@ function DashboardPage() {
                                             <td className="p-4 text-sm text-slate-600">{student.email}</td>
                                             <td className="p-4 text-sm text-slate-600">{student.course}</td>
                                             <td className="p-4 text-sm space-x-2 whitespace-nowrap">
-                                                <button className="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded text-xs font-medium transition">
+                                                <button
+                                                    className="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded text-xs font-medium transition"
+                                                    onClick={() => handleEdit(student)}
+                                                >
                                                     Edit
                                                 </button>
                                                 <button
