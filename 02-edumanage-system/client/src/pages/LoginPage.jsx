@@ -1,17 +1,26 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { login } from '../services/authService.js';
 
 export default function LoginPage() {
     const [data, setData] = useState({ email: '', password: '' });
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
-        console.log(e.target.name, e.target.value);
         setData({ ...data, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
-        console.log(data);
+        try {
+            const result = await login(data);
+            
+            localStorage.setItem('token', result.token);
+            navigate('/dashboard');
+        } catch (error) {
+            console.log(error.message);
+        }
     };
 
     return (
