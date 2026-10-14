@@ -5,6 +5,17 @@ const API = Axios.create({
     baseURL: 'http://localhost:3000/api/students',
 })
 
+// Send the saved token with every request
+API.interceptors.request.use((config) => {
+    const token = localStorage.getItem('token');
+
+    if (token) {
+        config.headers.Authorization = `Bearer ${token}`;
+    }
+
+    return config;
+});
+
 // Get all students
 export const getAllStudents = async () => {
     const response = await API.get('/');
