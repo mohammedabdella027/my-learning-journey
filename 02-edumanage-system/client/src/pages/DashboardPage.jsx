@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getAllStudents, createStudent, DeleteStudent, UpdateStudent } from '../services/studentService';
+import { useNavigate } from 'react-router-dom';
 
 function DashboardPage() {
     // State
@@ -9,6 +10,7 @@ function DashboardPage() {
     const [dataForm, setDataForm] = useState({ name: '', email: '', course: '' });
     const [isOpen, setIsOpen] = useState(false);
     const [editId, setEditId] = useState(null);
+    const navigate = useNavigate();
 
     // Fetch all students when the component mounts
     useEffect(() => {
@@ -89,6 +91,12 @@ function DashboardPage() {
         }
     };
 
+    // Remove the token and return to the login page
+    const handleLogout = () => {
+        localStorage.removeItem('token');
+        navigate('/');
+    };
+
     return (
         <div className="p-4 sm:p-8 max-w-7xl mx-auto font-sans bg-slate-50 min-h-screen sm:h-screen sm:flex sm:flex-col">
             {/* Header Section */}
@@ -97,12 +105,20 @@ function DashboardPage() {
                     <h1 className="text-2xl font-bold text-slate-800 mb-1">Student Management</h1>
                     <p className="text-sm text-slate-500">Manage and monitor registered students</p>
                 </div>
-                <button
-                    className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded-md transition duration-200 shadow-sm w-full sm:w-auto text-center"
-                    onClick={handleClick}
-                >
-                    + Add New Student
-                </button>
+                <div className="flex flex-col sm:flex-row gap-3">
+                    <button
+                        className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded-md transition duration-200 shadow-sm w-full sm:w-auto text-center"
+                        onClick={handleClick}
+                    >
+                        + Add New Student
+                    </button>
+                    <button
+                        className="bg-white hover:bg-slate-100 text-slate-700 font-semibold px-4 py-2 rounded-md border border-slate-200 transition duration-200 shadow-sm w-full sm:w-auto text-center cursor-pointer"
+                        onClick={handleLogout}
+                    >
+                        Logout
+                    </button>
+                </div>
             </div>
 
             {/* Add Student Form */}
