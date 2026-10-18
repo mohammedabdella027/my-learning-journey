@@ -47,3 +47,40 @@ export const loginUser = async (credentials) => {
         user: { id: user.id, name: user.name, email: user.email },
     };
 };
+
+export const registerUser = async (userData) => {
+    const { name, email, password } = userData;
+
+    // Validate the input
+    if (!name || !email || !password) {
+        const error = new Error('must provide name, email and password');
+        error.status = 400;
+        throw error;
+    }
+
+    if (password.length < 6) {
+        const error = new Error('Password must be at least 6 characters');
+        error.status = 400;
+        throw error;
+    }
+
+    // Check if the email already exists
+    const [rows] = await db.query('SELECT id FROM users WHERE email = ?', [email]);
+
+    if (rows[0]) {
+        const error = new Error('Email already registered');
+        error.status = 409;
+        throw error;
+    }
+
+    // Hash the password, never save it as plain text
+    const passwordHash = await bcrypt.hash(password, 10);
+
+    // Save the user
+    const [result] = await db.query(
+        'INSERT INTO users (name, email, password_hash) VALUES (?, ?, ?)',
+        [name, email, passwordHash]
+    );
+
+    return { id: result.insertId, name, email };
+};
