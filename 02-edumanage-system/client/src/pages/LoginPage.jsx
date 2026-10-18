@@ -4,6 +4,8 @@ import { login } from '../services/authService.js';
 
 export default function LoginPage() {
     const [data, setData] = useState({ email: '', password: '' });
+    const [errorMessage, setErrorMessage] = useState('');
+    const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
 
     const handleChange = (e) => {
@@ -13,13 +15,18 @@ export default function LoginPage() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        setErrorMessage('');
+        setLoading(true);
+
         try {
             const result = await login(data);
-            
+
             localStorage.setItem('token', result.token);
             navigate('/dashboard');
         } catch (error) {
-            console.log(error.message);
+            setErrorMessage(error.response?.data?.message || 'Unable to reach the server');
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -71,12 +78,23 @@ export default function LoginPage() {
                     />
                 </div>
 
+                {/* Error message */}
+                {errorMessage && (
+                    <div
+                        role="alert"
+                        className="bg-red-50 rounded-lg p-3 text-red-700 border border-red-200 text-sm"
+                    >
+                        {errorMessage}
+                    </div>
+                )}
+
                 {/* Submit */}
                 <button
                     type="submit"
-                    className="w-full px-5 py-2.5 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-semibold rounded-lg text-sm shadow-sm hover:shadow transition-all duration-200 cursor-pointer"
+                    disabled={loading}
+                    className="w-full px-5 py-2.5 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-semibold rounded-lg text-sm shadow-sm hover:shadow transition-all duration-200 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                    Login
+                    {loading ? 'Signing in...' : 'Login'}
                 </button>
             </form>
         </div>
