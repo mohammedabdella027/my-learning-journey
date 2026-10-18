@@ -11,3 +11,10 @@ export const login = async (credentials) => {
 
     return response.data.data;
 };
+
+// Create a new account
+export const register = async (userData) => {
+    const response = await API.post('/register', userData);
+    
+    return response.data.data;
+};
