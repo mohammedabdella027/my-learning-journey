@@ -137,7 +137,7 @@ function DashboardPage() {
                         className="w-full sm:flex-1 px-3 py-2 bg-slate-50 focus:bg-white border border-slate-200 rounded-lg text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all"
                     />
                     <input
-                        type="text"
+                        type="email"
                         name="email"
                         placeholder="email"
                         value={dataForm.email}
