@@ -10,6 +10,7 @@ function DashboardPage() {
     const [dataForm, setDataForm] = useState({ name: '', email: '', course: '' });
     const [isOpen, setIsOpen] = useState(false);
     const [editId, setEditId] = useState(null);
+    const [actionError, setActionError] = useState(null);
     const navigate = useNavigate();
 
     // Fetch all students when the component mounts
@@ -38,6 +39,8 @@ function DashboardPage() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        setActionError(null);
+
         try {
             if (editId) {
                 const updatedStudent = await UpdateStudent(editId, dataForm);
@@ -53,7 +56,7 @@ function DashboardPage() {
 
             setDataForm({ name: '', email: '', course: '' });
         } catch (err) {
-            setError(err.message || 'Failed to save student');
+            setActionError(err.response?.data?.message || 'Failed to save student');
         }
     };
 
@@ -68,6 +71,7 @@ function DashboardPage() {
     const handleCancel = () => {
         setEditId(null);
         setDataForm({ name: '', email: '', course: '' });
+        setActionError(null);
         setIsOpen(false);
     };
 
@@ -82,12 +86,14 @@ function DashboardPage() {
     const handleDelete = async (id) => {
         if (!window.confirm('Delete this student?')) return;
 
+        setActionError(null);
+
         try {
             await DeleteStudent(id);
 
             setStudents(students.filter((student) => student.id !== id));
         } catch (err) {
-            setError(err.message || 'Failed to delete student');
+            setActionError(err.response?.data?.message || 'Failed to delete student');
         }
     };
 
@@ -168,6 +174,16 @@ function DashboardPage() {
                         Cancel
                     </button>
                 </form>
+            )}
+
+            {/* Action Error */}
+            {actionError && (
+                <div
+                    role="alert"
+                    className="bg-red-50 rounded-lg p-4 mb-6 text-red-700 border border-red-200 text-sm shrink-0"
+                >
+                    <span className="font-semibold">Error: </span> {actionError}
+                </div>
             )}
 
             {/* Loading State */}
