@@ -9,7 +9,7 @@ export const getStudentById = async (id) => {
     const [rows] = await db.query('SELECT * FROM students WHERE id = ?', [id]);
 
     if (rows.length === 0) {
-        const error = new Error ('Students not found')
+        const error = new Error('Students not found')
         error.status = 404;
         throw error
     }
@@ -18,7 +18,7 @@ export const getStudentById = async (id) => {
 }
 
 export const createStudentInfo = async (studentData) => {
-    const {name, email, course} = studentData;
+    const { name, email, course } = studentData;
 
     // 1. Validate that all required fields are present
     if (!name || !email || !course) {
@@ -27,10 +27,20 @@ export const createStudentInfo = async (studentData) => {
         throw error
     }
 
-    // 2. Proceed with database insertion if validation passes
-    const [result] = await db.query('INSERT INTO students (name, email, course) VALUES (?, ?, ?)', [name, email, course]);
+    try {
+        // 2. Proceed with database insertion if validation passes
+        const [result] = await db.query('INSERT INTO students (name, email, course) VALUES (?, ?, ?)', [name, email, course]);
 
-    return {id: result.insertId, name, email, course}
+        return { id: result.insertId, name, email, course }
+    } catch (err) {
+        if (err.code === 'ER_DUP_ENTRY') {
+            const error = new Error('A student with this email already exists');
+            error.status = 409;
+            throw error;
+        }
+
+        throw err;
+    }
 }
 
 export const deleteStudentInfo = async (id) => {
@@ -43,11 +53,11 @@ export const deleteStudentInfo = async (id) => {
         throw error;
     }
 
-    return {message: "Student deleted successfully"}
+    return { message: "Student deleted successfully" }
 }
 
 export const updateStudentInfo = async (id, studentData) => {
-    const {name, email, course} = studentData;
+    const { name, email, course } = studentData;
 
     if (!name || !email || !course) {
         const error = new Error("All fields (name, email, course) are required for update");
@@ -55,13 +65,23 @@ export const updateStudentInfo = async (id, studentData) => {
         throw error;
     };
 
-    const [result] = await db.query('UPDATE students SET name = ?, email = ?, course = ? WHERE id = ?', [name, email, course, id]);
+    try {
+        const [result] = await db.query('UPDATE students SET name = ?, email = ?, course = ? WHERE id = ?', [name, email, course, id]);
 
-    if (result.affectedRows === 0) {
-        const error = new Error("Student not found.");
-        error.status = 404;
-        throw error;
-    };
+        if (result.affectedRows === 0) {
+            const error = new Error("Student not found.");
+            error.status = 404;
+            throw error;
+        };
 
-    return {id: Number(id), name, email, course}
+        return { id: Number(id), name, email, course }
+    } catch (err) {
+        if (err.code === 'ER_DUP_ENTRY') {
+            const error = new Error('A student with this email already exists');
+            error.status = 409;
+            throw error;
+        }
+
+        throw err;
+    }
 }
