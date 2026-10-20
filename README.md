@@ -12,15 +12,15 @@
 
 This isn't a portfolio and it isn't a single-course repo — it's my **long-term learning journal**. It holds my notes, practice work, experiments, and projects as I grow as a developer.
 
-For a while, the biggest thread running through it was the **AI Full-Stack Web Developer Course**. Right now, though, I've shifted my energy toward **practical full-stack project work** — building something real from the ground up instead of moving through more course modules. The course isn't going anywhere; it's paused, not dropped, and I expect to pick it back up in the coming weeks.
+For a while, the biggest thread running through it was the **AI Full-Stack Web Developer Course**. More recently, I shifted my energy toward **practical full-stack project work** — building something real from the ground up instead of moving through more course modules. That project, **EduManage**, is now complete. The course isn't going anywhere; it's paused, not dropped.
 
 ---
 
-## 📍 Current Focus
+## 📍 Current Status
 
-**Building `02-edumanage-system`** — a full-stack project I'm starting from scratch, currently at the frontend setup stage: `client/` initialized with **Vite, React, and Tailwind CSS**.
+**`02-edumanage-system` is complete.** It is a full-stack student management app with a React frontend, an Express API, and a MySQL database. It includes user registration, login with JWT authentication, a protected dashboard, and full student management (add, edit, and delete).
 
-**`01. AI Full-Stack Web Developer Course` is temporarily paused.** I stepped away right around the Vector Embeddings and Semantic Comparator modules, and I'll be resuming that track in a few weeks once I've made solid progress on EduManage.
+**`01. AI Full-Stack Web Developer Course` is temporarily paused.** I stepped away right around the Vector Embeddings and Semantic Comparator modules, and it is still very much part of the plan.
 
 ---
 
@@ -41,25 +41,25 @@ Backend & React Development
 Introduction to AI-Powered Application Development
           │
           ▼
-AI-Powered Application Architecture, Vectors & Embeddings   ⏸ PAUSED — resuming soon
+AI-Powered Application Architecture, Vectors & Embeddings   ⏸ PAUSED
           │
           ▼
-Practical Full-Stack Project Work (EduManage System)   ← CURRENT FOCUS
+Practical Full-Stack Project Work (EduManage System)   ✅ COMPLETED
 ```
 
-Each stage built on the last — from styling my first web page, through AI foundations and embeddings, to now applying it all in a real, practical build.
+Each stage built on the last — from styling my first web page, through AI foundations and embeddings, to applying it all in a real, practical build.
 
 ---
 
 ## 📍 Current Progress
 
-| Learning Area                                                  | Status                                         |
-| ---------------------------------------------------------------- | ------------------------------------------------- |
-| Web Development Foundations                                      | ✅ Completed                                        |
-| Programming & JavaScript Foundations                              | ✅ Completed                                        |
-| Backend & React Development                                      | ✅ Completed                                        |
-| `01. AI Full-Stack Web Developer Course`                          | ⏸ Paused (Resuming soon)                          |
-| `02-edumanage-system`                                             | 🔄 In Progress (Active Focus — Frontend Setup Complete) |
+| Learning Area                            | Status          |
+| ---------------------------------------- | --------------- |
+| Web Development Foundations              | ✅ Completed    |
+| Programming & JavaScript Foundations     | ✅ Completed    |
+| Backend & React Development              | ✅ Completed    |
+| `01. AI Full-Stack Web Developer Course` | ⏸ Paused        |
+| `02-edumanage-system`                    | ✅ Completed    |
 
 ---
 
@@ -81,24 +81,26 @@ Git, Node.js, Express.js, MySQL, React, asynchronous JavaScript, React Hooks, AP
 - AI-Powered Application Architecture & Building the Chat Bot (GPT-Clone)
 - Beyond Keywords: The Mathematics of Meaning — Vector Embeddings, Cosine Similarity, and a Semantic Comparator demo
 
-This module track is on hold while I focus on EduManage, but it's very much still part of the plan.
+This module track is on hold, but it's very much still part of the plan.
 
-### 🏗️ Practical Full-Stack Projects *(current)*
-- **EduManage System** — a full-stack app I'm building outside the course structure, applying everything from the earlier modules in a real project. Frontend (`client/`) is set up with Vite, React, and Tailwind CSS; backend and further features are still to come.
+### 🏗️ Practical Full-Stack Projects
+- **EduManage System** *(completed)* — a full-stack app I built outside the course structure, applying everything from the earlier modules in a real project. It covers a React (Vite) and Tailwind CSS frontend, an Express and MySQL backend, and JWT-based authentication with registration, login, logout, and a protected API.
 
 ---
 
 ## 🛠️ Technologies
 
-**Frontend:** HTML · CSS · Bootstrap · Tailwind CSS · JavaScript · React (Vite)
+**Frontend:** HTML · CSS · Bootstrap · Tailwind CSS · JavaScript · React (Vite) · React Router · Axios
 
-**Backend:** Node.js · Express.js
+**Backend:** Node.js · Express.js · mysql2
 
 **Database:** MySQL
 
+**Authentication:** bcrypt (password hashing) · JSON Web Tokens (jsonwebtoken)
+
 **AI / SDKs *(learning & integration)*:** Google GenAI SDK (`gemini-embedding-001`) · Vector Embeddings · Cosine Similarity
 
-**Tools:** Git · GitHub · VS Code
+**Tools:** Git · GitHub · VS Code · Postman
 
 ---
 
@@ -118,7 +120,9 @@ my-learning-journey/
 │       ├── 01_The_Mathematics_of_Meaning/
 │       └── 02_Building_a_Semantic_Comparator_Demo_Practice/
 ├── 02-edumanage-system/
-│   └── client/  # Vite + React + Tailwind CSS setup
+│   ├── client/   # Vite + React + Tailwind CSS frontend
+│   ├── server/   # Express + MySQL API with JWT authentication
+│   └── README.md
 └── README.md
 ```
 
@@ -136,24 +140,29 @@ Full details live inside its own project folder.
 
 ### 🏫 About EduManage System
 
-A practical full-stack project, separate from the course curriculum, meant to put my accumulated skills to work on something real:
+A practical full-stack project, separate from the course curriculum, built to put my accumulated skills to work on something real. It is a learning project and not a production system:
 
-- `client/` initialized with Vite, React, and Tailwind CSS
-- Backend and further features not yet started
-- Details and progress will live inside its own project folder as the build continues
+- Register and log in with email and password
+- Passwords stored as bcrypt hashes, and sessions handled with JWT
+- Protected dashboard, with automatic logout when the token is rejected
+- Add, edit, and delete students, with clear validation and error messages
+- Responsive layout with a sticky header and table head
+- A REST API that checks the token on every students request
+
+Setup steps, the API reference, and security notes live in its own [README](./02-edumanage-system/README.md).
 
 ---
 
 ## 📦 What You'll Find in This Repository
 
-| Category            | Description                                      |
-| -------------------- | ------------------------------------------------- |
-| 📝 Learning Notes     | Concepts and explanations in my own words         |
-| 💻 Practice           | Small exercises and coding drills                 |
-| 🧪 Experiments        | Things I'm testing out or exploring               |
-| 🔨 Projects           | Larger builds that apply what I've learned        |
-| 📚 Course Work        | Structured material from courses I'm taking       |
-| 📈 Progress           | Where I currently stand in my learning            |
+| Category          | Description                                  |
+| ----------------- | -------------------------------------------- |
+| 📝 Learning Notes | Concepts and explanations in my own words    |
+| 💻 Practice       | Small exercises and coding drills            |
+| 🧪 Experiments    | Things I'm testing out or exploring          |
+| 🔨 Projects       | Larger builds that apply what I've learned   |
+| 📚 Course Work    | Structured material from courses I'm taking  |
+| 📈 Progress       | Where I currently stand in my learning       |
 
 This is a **working repository** — it's meant to show real, ongoing learning, not a polished final product.
 
@@ -173,13 +182,13 @@ I learn best by building, not just watching. My approach here is:
 
 ## ✅ Progress Tracker
 
-| # | Learning Area                                          | Status                                              |
-| - | -------------------------------------------------------- | ------------------------------------------------------ |
-| 1 | Web Development Foundations                              | ✅ Completed                                            |
-| 2 | Programming & JavaScript Foundations                     | ✅ Completed                                            |
-| 3 | Backend & React Development                              | ✅ Completed                                            |
-| 4 | `01. AI Full-Stack Web Developer Course`                  | ⏸ Paused (Resuming soon)                              |
-| 5 | `02-edumanage-system`                                     | 🔄 In Progress (Active Focus — Frontend Setup Complete) |
+| # | Learning Area                            | Status       |
+| - | ---------------------------------------- | ------------ |
+| 1 | Web Development Foundations              | ✅ Completed |
+| 2 | Programming & JavaScript Foundations     | ✅ Completed |
+| 3 | Backend & React Development              | ✅ Completed |
+| 4 | `01. AI Full-Stack Web Developer Course` | ⏸ Paused     |
+| 5 | `02-edumanage-system`                    | ✅ Completed |
 
 ---
 
