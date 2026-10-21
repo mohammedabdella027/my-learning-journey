@@ -55,3 +55,17 @@ This plan outlines the technical and operational roadmap for the MTech Import an
 | 5 | Testing | Application Programmer and Testing Team | Conduct unit and integration testing. Check the source code and fix errors. |
 | 6 | Maintenance and Support | Testing Team | Test the system under operational load. Identify and fix technical issues after deployment. |
 | 7 | Documentation | Data Analyst, Database Designer, Application Programmer, and Testing Team | Compile the user manual. Write the technical documentation and the operating procedures. |
+
+## Task 3: Work Time Schedule (Gantt Chart, 4 Weeks)
+
+| Tasks | Days | Start Day | End Day | Week 1 | Week 2 | Week 3 | Week 4 |
+|---|---|---|---|---|---|---|---|
+| Planning | 3 | Day 1 | Day 3 | ■ | | | |
+| Requirement Analysis | 5 | Day 4 | Day 8 | ■ | ■ | | |
+| Designing | 5 | Day 9 | Day 13 | | ■ | | |
+| Implementation | 6 | Day 14 | Day 19 | | ■ | ■ | |
+| Testing | 4 | Day 20 | Day 23 | | | ■ | ■ |
+| Maintenance and Support | 3 | Day 24 | Day 26 | | | | ■ |
+| Documentation | 2 | Day 27 | Day 28 | | | | ■ |
+
+Week 1 is days 1 to 7, week 2 is days 8 to 14, week 3 is days 15 to 21, and week 4 is days 22 to 28. The total duration is 28 days, which is 4 weeks.
