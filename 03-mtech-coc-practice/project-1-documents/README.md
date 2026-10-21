@@ -128,3 +128,24 @@ The database connects the four divisions through primary keys (PK) and foreign k
 | 2 | Storage (Size) | Expand the database server disk capacity as the records grow. Archive old transaction records. Monitor free disk space regularly. |
 | 3 | System Administration | Define and document the roles of every database administrator. Apply role-based access control, so each division sees only its own data. Use a firewall and strong passwords. |
 | 4 | Maintenance and Support | Schedule daily database backups and keep a replica server. Provide technical support and monitor the system continuously. Follow naming and coding standards. |
+
+## Task 6: Maintenance Procedures and Recovery Plan
+
+### Routine Maintenance Procedures
+
+| S/N | Procedure | Frequency | Responsible |
+|---|---|---|---|
+| 1 | Database backup to the external storage | Daily | Database Designer |
+| 2 | Antivirus update and full system scan | Weekly | Testing Team |
+| 3 | Software and security updates | Monthly | Application Programmer |
+| 4 | Restore test of the latest backup | Quarterly | Database Designer |
+| 5 | Review of user accounts and passwords | Quarterly | Project Manager |
+
+### Risk and Recovery Plan
+
+| S/N | Identified Risk | Likelihood | Preventive Measures | Corrective Actions |
+|---|---|---|---|---|
+| 1 | Attacks and hackers | Medium | Install and update antivirus software. Train users on password and security practices. Use SSL certificates. Run regular automated backups. | Isolate the affected system. Restore the system from the latest clean backup. Start the data recovery procedure. |
+| 2 | Server down | Medium | Renew the domain and hosting on time. Keep a secondary failover server. Use a UPS for power cuts. | Switch to the backup server. Restore the service immediately and find the cause. |
+| 3 | Data loss or corruption | Medium | Take daily backups to the external storage. Test restores regularly. Control who can delete records. | Restore the database from the latest backup. Check the data and fix the errors. |
+| 4 | Slow response time | Medium | Increase the network bandwidth. Update the core software regularly. Keep the database indexed. | Optimize the code and the queries. Scale the server resources. |
