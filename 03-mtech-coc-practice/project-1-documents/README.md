@@ -43,3 +43,15 @@ This plan outlines the technical and operational roadmap for the MTech Import an
 **Human Resources Sub-Total: 344,000 ETB**
 
 **Total Project Budget: 620,500 + 344,000 = 964,500 ETB**
+
+## Task 2: Activity Plan and Responsibility Allocation
+
+| S/N | Activity to Perform | Responsible Body | Core Responsibilities and Deliverables |
+|---|---|---|---|
+| 1 | Planning | Project Manager | Manage the overall project plan. Coordinate resources, budget, and milestones. |
+| 2 | Requirement Analysis | Data Analyst | Collect the requirements of the Stock, Finance, Customer Relation, and Human Resource divisions. Define the functional requirements and the input and output flows. |
+| 3 | Designing | Database Designer | Design the conceptual, logical, and physical database models. Create the entity relationship diagram and the table schemas. |
+| 4 | Implementation | Application Programmer | Build the web pages and the server-side modules. Develop the database connection, the login, and the data operations. |
+| 5 | Testing | Application Programmer and Testing Team | Conduct unit and integration testing. Check the source code and fix errors. |
+| 6 | Maintenance and Support | Testing Team | Test the system under operational load. Identify and fix technical issues after deployment. |
+| 7 | Documentation | Data Analyst, Database Designer, Application Programmer, and Testing Team | Compile the user manual. Write the technical documentation and the operating procedures. |
