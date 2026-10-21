@@ -69,3 +69,53 @@ This plan outlines the technical and operational roadmap for the MTech Import an
 | Documentation | 2 | Day 27 | Day 28 | | | | ■ |
 
 Week 1 is days 1 to 7, week 2 is days 8 to 14, week 3 is days 15 to 21, and week 4 is days 22 to 28. The total duration is 28 days, which is 4 weeks.
+
+## Task 4: Database and System Architecture
+
+The database connects the four divisions through primary keys (PK) and foreign keys (FK).
+
+### Entity Relationship Diagram (ERD)
+
+```text
++-------------------------------+        +-------------------------------+
+|        HR-DIVISION            |        |        STOCK-DIVISION         |
++-------------------------------+        +-------------------------------+
+| PK  Emp-ID                    |  1:N   | PK  Item-ID                   |
+|     Name (FName, LName)       |------->| FK  Emp-ID                    |
+|     Email, Gender, Phone-no   | Manage |     Item-Name, Category       |
+|     Division                  |        |     Quantity, Unit, Unit-Price|
++-------------------------------+        +---------------+---------------+
+        |                |                               |
+        | 1:N (Manage)   | 1:N (Manage)                  | 1:N (Sold or bought in)
+        v                v                               v
++-------------------------------+        +-------------------------------+
+|   CUSTOMER-RELATION-DIVISION  |  1:N   |        FINANCE-DIVISION       |
++-------------------------------+------->+-------------------------------+
+| PK  Cust-ID                   | (Makes)| PK  Payment-ID                |
+| FK  Emp-ID                    |        | FK  Emp-ID, Cust-ID, Item-ID  |
+|     Name (FName, LName)       |        |     Payment-Type, Payment-Date|
+|     Email, Phone-no           |        |     Total-Payment, Profit, Loss|
+|     Country, Customer-Type    |        |                               |
++-------------------------------+        +-------------------------------+
+```
+
+### Relationships
+
+| Parent table | Child table | Type | Meaning |
+|---|---|---|---|
+| HR (Emp-ID) | Stock | 1:N | One employee manages many items |
+| HR (Emp-ID) | Customer Relation | 1:N | One employee manages many customers |
+| HR (Emp-ID) | Finance | 1:N | One employee records many payments |
+| Customer Relation (Cust-ID) | Finance | 1:N | One customer makes many payments |
+| Stock (Item-ID) | Finance | 1:N | One item appears in many payments |
+
+### Web System Architecture (Three Tiers)
+
+```text
++-----------------+      HTTP      +----------------------+      SQL      +------------------+
+|  Client tier    | <-------------> |  Application tier    | <------------> |  Data tier       |
+|  Browser        |                 |  Apache + PHP        |                |  MySQL database  |
+|  HTML and CSS   |                 |  Login, insert,      |                |  company         |
+|                 |                 |  search, delete      |                |                  |
++-----------------+                 +----------------------+                +------------------+
+```
