@@ -119,3 +119,12 @@ The database connects the four divisions through primary keys (PK) and foreign k
 |                 |                 |  search, delete      |                |                  |
 +-----------------+                 +----------------------+                +------------------+
 ```
+
+## Task 5: Scalability and Standardization Plan
+
+| S/N | Parameter | Standardization and Improvement Strategy |
+|---|---|---|
+| 1 | Response Time | Use database indexes on key columns such as the IDs. Optimize slow queries. Compress images and static files, and cache pages that rarely change. |
+| 2 | Storage (Size) | Expand the database server disk capacity as the records grow. Archive old transaction records. Monitor free disk space regularly. |
+| 3 | System Administration | Define and document the roles of every database administrator. Apply role-based access control, so each division sees only its own data. Use a firewall and strong passwords. |
+| 4 | Maintenance and Support | Schedule daily database backups and keep a replica server. Provide technical support and monitor the system continuously. Follow naming and coding standards. |
