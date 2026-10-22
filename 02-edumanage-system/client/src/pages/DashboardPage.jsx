@@ -99,6 +99,8 @@ function DashboardPage() {
 
     // Remove the token and return to the login page
     const handleLogout = () => {
+        if (!window.confirm('Logout from this page?')) return;
+        
         localStorage.removeItem('token');
         navigate('/');
     };
