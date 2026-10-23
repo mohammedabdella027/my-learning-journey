@@ -1,0 +1,31 @@
+body {
+    background-color: lightgrey;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: blue;
+    margin: 0px;
+    padding: 0px;
+}
+
+h1 {
+    color: green;
+}
+
+p {
+    text-align: justify;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li, a {
+    display: block;
+    color: black;
+    padding: 20px 40px;
+    text-decoration: none;
+    float: left;
+}
+
+header, footer {
+    background-color: #777d6a;
+}
