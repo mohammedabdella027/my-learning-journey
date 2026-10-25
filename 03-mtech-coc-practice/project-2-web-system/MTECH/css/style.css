@@ -29,3 +29,14 @@ li a {
 header, footer {
     background-color: #777d6a;
 }
+
+header::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+h1 {
+    color: green;
+    clear: both;
+}
