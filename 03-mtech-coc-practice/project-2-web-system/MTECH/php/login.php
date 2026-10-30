@@ -5,7 +5,7 @@ include "db.php";
 $account = $_POST['account'];
 $password = $_POST['password'];
 
-$selectLoginTable = mysqli_prepare($conn, "SELECT ACCOUNT FROM login_table WHERE ACCOUNT = ? AND `PASSWORD` = ?");
+$selectLoginTable = mysqli_prepare($conn, "SELECT * FROM login_table WHERE ACCOUNT = ? AND `PASSWORD` = ?");
 
 mysqli_stmt_bind_param($selectLoginTable, "ss", $account, $password);
 mysqli_stmt_execute($selectLoginTable);
