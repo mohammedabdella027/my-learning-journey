@@ -3,7 +3,7 @@
 **A personal archive of everything I'm learning, building, and figuring out — one project at a time.**
 
 ![Status](https://img.shields.io/badge/status-actively%20building%20%26%20learning-brightgreen)
-![Focus](https://img.shields.io/badge/focus-Full--Stack%20Practical%20Projects%20(EduManage)%20%26%20AI%20Integration-blueviolet)
+![Focus](https://img.shields.io/badge/focus-Practical%20Projects%20(EduManage%20%26%20COC%20Practice)%20%26%20AI%20Integration-blueviolet)
 ![Type](https://img.shields.io/badge/type-personal%20learning%20repo-informational)
 
 ---
@@ -12,11 +12,13 @@
 
 This isn't a portfolio and it isn't a single-course repo — it's my **long-term learning journal**. It holds my notes, practice work, experiments, and projects as I grow as a developer.
 
-For a while, the biggest thread running through it was the **AI Full-Stack Web Developer Course**. More recently, I shifted my energy toward **practical full-stack project work** — building something real from the ground up instead of moving through more course modules. That project, **EduManage**, is now complete. The course isn't going anywhere; it's paused, not dropped.
+For a while, the biggest thread running through it was the **AI Full-Stack Web Developer Course**. More recently, I shifted my energy toward **practical project work** — building something real from the ground up instead of moving through more course modules. The first of those projects, **EduManage**, is complete. The second, a **COC exam practice project**, is also complete, and it is how I am preparing for my COC exam, which is still ahead. The course isn't going anywhere; it's paused, not dropped.
 
 ---
 
 ## 📍 Current Status
+
+**`03-mtech-coc-practice` is complete.** I built it to prepare for my COC exam, which is still ahead. It follows the structure of the two exam projects, using the MTech Import and Export Company scenario. It includes the planning documents of Project 1, and a working HTML, CSS, PHP, and MySQL system for Project 2, with a database backup and restore, a protection scan, and remote access.
 
 **`02-edumanage-system` is complete.** It is a full-stack student management app with a React frontend, an Express API, and a MySQL database. It includes user registration, login with JWT authentication, a protected dashboard, and full student management (add, edit, and delete).
 
@@ -45,21 +47,25 @@ AI-Powered Application Architecture, Vectors & Embeddings   ⏸ PAUSED
           │
           ▼
 Practical Full-Stack Project Work (EduManage System)   ✅ COMPLETED
+          │
+          ▼
+COC Exam Practice Project (HTML, CSS, PHP & MySQL)   ✅ COMPLETED
 ```
 
-Each stage built on the last — from styling my first web page, through AI foundations and embeddings, to applying it all in a real, practical build.
+Each stage built on the last — from styling my first web page, through AI foundations and embeddings, to applying it all in real, practical builds.
 
 ---
 
 ## 📍 Current Progress
 
-| Learning Area                            | Status          |
-| ---------------------------------------- | --------------- |
-| Web Development Foundations              | ✅ Completed    |
-| Programming & JavaScript Foundations     | ✅ Completed    |
-| Backend & React Development              | ✅ Completed    |
-| `01. AI Full-Stack Web Developer Course` | ⏸ Paused        |
-| `02-edumanage-system`                    | ✅ Completed    |
+| Learning Area                            | Status                                      |
+| ---------------------------------------- | ------------------------------------------- |
+| Web Development Foundations              | ✅ Completed                                |
+| Programming & JavaScript Foundations     | ✅ Completed                                |
+| Backend & React Development              | ✅ Completed                                |
+| `01. AI Full-Stack Web Developer Course` | ⏸ Paused                                    |
+| `02-edumanage-system`                    | ✅ Completed                                |
+| `03-mtech-coc-practice`                  | ✅ Completed                                |
 
 ---
 
@@ -83,8 +89,9 @@ Git, Node.js, Express.js, MySQL, React, asynchronous JavaScript, React Hooks, AP
 
 This module track is on hold, but it's very much still part of the plan.
 
-### 🏗️ Practical Full-Stack Projects
+### 🏗️ Practical Projects
 - **EduManage System** *(completed)* — a full-stack app I built outside the course structure, applying everything from the earlier modules in a real project. It covers a React (Vite) and Tailwind CSS frontend, an Express and MySQL backend, and JWT-based authentication with registration, login, logout, and a protected API.
+- **MTech COC Practice Project** *(completed)* — a practice project for my COC exam. It covers planning documents (BOQ, activity plan, schedule, ERD, scalability and recovery plans) and a dynamic web system built with HTML, external CSS, PHP, and MySQL, including login, registration, search, delete, and list pages.
 
 ---
 
@@ -92,15 +99,15 @@ This module track is on hold, but it's very much still part of the plan.
 
 **Frontend:** HTML · CSS · Bootstrap · Tailwind CSS · JavaScript · React (Vite) · React Router · Axios
 
-**Backend:** Node.js · Express.js · mysql2
+**Backend:** Node.js · Express.js · mysql2 · PHP (mysqli)
 
-**Database:** MySQL
+**Database:** MySQL · phpMyAdmin
 
 **Authentication:** bcrypt (password hashing) · JSON Web Tokens (jsonwebtoken)
 
 **AI / SDKs *(learning & integration)*:** Google GenAI SDK (`gemini-embedding-001`) · Vector Embeddings · Cosine Similarity
 
-**Tools:** Git · GitHub · VS Code · Postman
+**Tools:** Git · GitHub · VS Code · Postman · MAMP · XAMPP
 
 ---
 
@@ -122,6 +129,10 @@ my-learning-journey/
 ├── 02-edumanage-system/
 │   ├── client/   # Vite + React + Tailwind CSS frontend
 │   ├── server/   # Express + MySQL API with JWT authentication
+│   └── README.md
+├── 03-mtech-coc-practice/
+│   ├── project-1-documents/    # The question and the answer for the planning documents
+│   ├── project-2-web-system/   # HTML + CSS + PHP + MySQL web system and database files
 │   └── README.md
 └── README.md
 ```
@@ -150,6 +161,18 @@ A practical full-stack project, separate from the course curriculum, built to pu
 - A REST API that checks the token on every students request
 
 Setup steps, the API reference, and security notes live in its own [README](./02-edumanage-system/README.md).
+
+### 🧾 About MTech COC Practice Project
+
+A practice project that I built to prepare for the COC exam (occupational code EISWDDBAL-IV). It follows the structure of the two exam projects, with the scenario of the MTech Import and Export Company. It is a learning project and not a production system:
+
+- **Project 1:** the planning documents, with a BOQ, an activity plan, a Gantt schedule, an ERD of the four divisions, and scalability and recovery plans
+- **Project 2:** a database with five tables, one external CSS file, five HTML pages, and PHP scripts for login, registration, search, delete, and list
+- PHP scripts use prepared statements, so typed values never become part of the SQL
+- A database backup that was restored into a separate database to prove it works
+- A protection scan, and remote access from another device on the same network
+
+The structure, the setup steps for MAMP and XAMPP, and the known limitations live in its own [README](./03-mtech-coc-practice/README.md).
 
 ---
 
@@ -182,13 +205,14 @@ I learn best by building, not just watching. My approach here is:
 
 ## ✅ Progress Tracker
 
-| # | Learning Area                            | Status       |
-| - | ---------------------------------------- | ------------ |
-| 1 | Web Development Foundations              | ✅ Completed |
-| 2 | Programming & JavaScript Foundations     | ✅ Completed |
-| 3 | Backend & React Development              | ✅ Completed |
-| 4 | `01. AI Full-Stack Web Developer Course` | ⏸ Paused     |
-| 5 | `02-edumanage-system`                    | ✅ Completed |
+| # | Learning Area                            | Status                                     |
+| - | ---------------------------------------- | ------------------------------------------ |
+| 1 | Web Development Foundations              | ✅ Completed                               |
+| 2 | Programming & JavaScript Foundations     | ✅ Completed                               |
+| 3 | Backend & React Development              | ✅ Completed                               |
+| 4 | `01. AI Full-Stack Web Developer Course` | ⏸ Paused                                   |
+| 5 | `02-edumanage-system`                    | ✅ Completed                               |
+| 6 | `03-mtech-coc-practice`                  | ✅ Completed                               |
 
 ---
 
