@@ -1,0 +1,16 @@
+.canvas-container{
+    width: 500px;
+    margin: auto;                       
+}
+
+.canvas-tittle {
+    text-align: center;
+}
+
+span{
+    color: orange;
+}
+
+.canvas {
+    background-color: #000;
+}
