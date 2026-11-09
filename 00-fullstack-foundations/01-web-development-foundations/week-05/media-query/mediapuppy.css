@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+img{
+    width: 100%;
+}
+header h1{
+    padding: 15px 0;
+}
+.header-footer{
+    text-align: center;
+    font-size: 14px;
+    background-color: #085070;
+    color: white;
+}
+.sec-container {
+    width: 80%;
+    margin: 0 auto;
+}
+.sec2{
+    margin-top: 15px;
+}
+.sec2 img{
+    padding: 20px 0;
+}
+.puppy-missing {
+    display: none;
+}
+.sec3 h3{
+    text-align: center;
+    font-size: 32px;
+}
+.sec4{
+    margin: 20px 0;
+}
+.sec4 img{
+    padding: 20px 0;
+    margin-bottom: 15px;
+}
+footer .header-footer{
+    padding: 40px 0;
+    font-size: 28px;
+}
+
+/*------- media query --------*/
+/*------- media query --------*/
+
+@media (min-width: 960px){
+    header h1{
+        padding: 30px 0;
+    }
+    .banner img{
+        width: 100%;
+    }
+    .sec-container{
+        width: 800px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .puppy-missing{
+        display: block;
+        background-color: #f04d65;
+        margin-top: 2.5%;
+        height: 265px;
+        width: 30%;
+        text-align: center;
+        font-size: 30px;
+    }
+    .puppy-missing p{
+        padding: 30% 25%;
+    }
+    .puppy1{
+        width: 33%;
+    }
+    .puppy2{
+        width: 33%;
+    }
+    .sec3-container h3 {
+        text-align: center;
+    }
+    .sec4-container{
+        display: flex;
+        gap: 2%;
+    }
+    footer p{
+        padding: 50px 0;
+    }
+
+}
