@@ -1,0 +1,18 @@
+{
+  "name": "mysqlpractice",
+  "version": "1.0.0",
+  "description": "Mysql Practice",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "^2.3.0",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "mysql2": "^3.23.1"
+  }
+}

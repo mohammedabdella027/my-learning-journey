@@ -1,0 +1,85 @@
+.youtube-section{
+
+    padding:80px 0;
+
+    background:#f7f7f7;
+
+}
+
+.youtube-card{
+
+    border:none;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
+
+    transition:.35s;
+
+}
+
+.youtube-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.18);
+
+}
+
+.youtube-card img{
+
+    height:240px;
+
+    object-fit:cover;
+
+    transition:.4s;
+
+}
+
+.youtube-card:hover img{
+
+    transform:scale(1.05);
+
+}
+
+.card-title{
+
+    font-size:20px;
+
+    font-weight:700;
+
+    line-height:1.4;
+
+}
+
+.card-text{
+
+    color:#666;
+
+    flex-grow:1;
+
+}
+
+.btn{
+
+    border-radius:50px;
+
+}
+
+.display-5{
+
+    font-weight:700;
+
+}
+
+@media(max-width:768px){
+
+.youtube-card img{
+
+height:220px;
+
+}
+
+}
