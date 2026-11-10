@@ -12,17 +12,19 @@
 
 This isn't a portfolio and it isn't a single-course repo — it's my **long-term learning journal**. It holds my notes, practice work, experiments, and projects as I grow as a developer.
 
-For a while, the biggest thread running through it was the **AI Full-Stack Web Developer Course**. More recently, I shifted my energy toward **practical project work** — building something real from the ground up instead of moving through more course modules. The first of those projects, **EduManage**, is complete. The second, a **COC exam practice project**, is also complete, and it is how I am preparing for my COC exam, which is still ahead. The course isn't going anywhere; it's paused, not dropped.
+It starts with the **full-stack foundations**: all the practice work from my three training phases (HTML, CSS and Bootstrap; JavaScript; Node, Express, MySQL and React), organized week by week. After that came the **AI Full-Stack Web Developer Course**, and more recently **practical project work** — building something real from the ground up. The first of those projects, **EduManage**, is complete. The second, my **COC exam practice**, is still in progress, and it is how I am preparing for my COC exam, which is still ahead. The course isn't going anywhere; it's paused, not dropped.
 
 ---
 
 ## 📍 Current Status
 
-**`03-mtech-coc-practice` is complete.** I built it to prepare for my COC exam, which is still ahead. It follows the structure of the two exam projects, using the MTech Import and Export Company scenario. It includes the planning documents of Project 1, and a working HTML, CSS, PHP, and MySQL system for Project 2, with a database backup and restore, a protection scan, and remote access.
+**`03-coc-practice` is in progress.** It holds my preparation for the COC exam, which is still ahead. It has two parts: `01-mtech-coc-practice`, a practice project built on the MTech Import and Export Company scenario, and `02-coc-model-exam-practice`, practice on the model exam. The MTech project includes the planning documents of Project 1, and a working HTML, CSS, PHP, and MySQL system for Project 2, with a database backup and restore, a protection scan, and remote access.
 
 **`02-edumanage-system` is complete.** It is a full-stack student management app with a React frontend, an Express API, and a MySQL database. It includes user registration, login with JWT authentication, a protected dashboard, and full student management (add, edit, and delete).
 
 **`01. AI Full-Stack Web Developer Course` is temporarily paused.** I stepped away right around the Vector Embeddings and Semantic Comparator modules, and it is still very much part of the plan.
+
+**`00-fullstack-foundations` is complete.** It holds all my practice work from the three foundation phases, with every week I saved code for. It is the base that everything else in this repository builds on.
 
 ---
 
@@ -31,54 +33,41 @@ For a while, the biggest thread running through it was the **AI Full-Stack Web D
 Here's the path that got me to where I am now:
 
 ```text
-Web Development Foundations
+Full-Stack Foundations                                  ✅ COMPLETED
           │
           ▼
-Programming & JavaScript Foundations
+AI Full-Stack Web Developer Course                      ⏸ PAUSED
           │
           ▼
-Backend & React Development
+Practical Full-Stack Project Work (EduManage System)    ✅ COMPLETED
           │
           ▼
-Introduction to AI-Powered Application Development
-          │
-          ▼
-AI-Powered Application Architecture, Vectors & Embeddings   ⏸ PAUSED
-          │
-          ▼
-Practical Full-Stack Project Work (EduManage System)   ✅ COMPLETED
-          │
-          ▼
-COC Exam Practice Project (HTML, CSS, PHP & MySQL)   ✅ COMPLETED
+COC Exam Practice Project (HTML, CSS, PHP & MySQL)      🚧 IN PROGRESS
 ```
 
-Each stage built on the last — from styling my first web page, through AI foundations and embeddings, to applying it all in real, practical builds.
+Each stage built on the last — from styling my first web page, through the foundations of JavaScript, Node, and React, then AI and embeddings, to applying it all in real, practical builds.
 
 ---
 
 ## 📍 Current Progress
 
-| Learning Area                            | Status                                      |
-| ---------------------------------------- | ------------------------------------------- |
-| Web Development Foundations              | ✅ Completed                                |
-| Programming & JavaScript Foundations     | ✅ Completed                                |
-| Backend & React Development              | ✅ Completed                                |
-| `01. AI Full-Stack Web Developer Course` | ⏸ Paused                                    |
-| `02-edumanage-system`                    | ✅ Completed                                |
-| `03-mtech-coc-practice`                  | ✅ Completed                                |
+| Learning Area                                                          | Status         |
+| ---------------------------------------------------------------------- | -------------- |
+| [Full-Stack Foundations](./00-fullstack-foundations)                   | ✅ Completed   |
+| `01. AI Full-Stack Web Developer Course`                               | ⏸ Paused       |
+| `02-edumanage-system`                                                  | ✅ Completed   |
+| `03-coc-practice`                                                      | 🚧 In progress |
 
 ---
 
 ## 🗺️ Learning Areas
 
-### 🌐 Web Development Foundations
-HTML, CSS, responsive design, Bootstrap, UI/UX basics, and deploying my first websites.
+### 🧱 Full-Stack Foundations
+My practice work from three training phases, kept in [`00-fullstack-foundations`](./00-fullstack-foundations):
 
-### 💻 Programming & JavaScript Foundations
-Programming fundamentals, JavaScript, algorithms, the DOM, event handling, jQuery, and problem-solving.
-
-### ⚙️ Backend & React Development
-Git, Node.js, Express.js, MySQL, React, asynchronous JavaScript, React Hooks, APIs, and routing.
+- 🌐 **Web Development Foundations** — HTML, CSS, responsive design, Bootstrap, UI/UX basics, and deploying my first websites.
+- 💻 **Programming & JavaScript Foundations** — Programming fundamentals, JavaScript, algorithms, the DOM, event handling, jQuery, and problem-solving.
+- ⚙️ **Backend & React Development** — Git, Node.js, Express.js, MySQL, React, asynchronous JavaScript, React Hooks, APIs, and routing.
 
 ### 🤖 AI Full-Stack Web Developer Course *(paused)*
 - Project - Netflix Clone
@@ -91,13 +80,13 @@ This module track is on hold, but it's very much still part of the plan.
 
 ### 🏗️ Practical Projects
 - **EduManage System** *(completed)* — a full-stack app I built outside the course structure, applying everything from the earlier modules in a real project. It covers a React (Vite) and Tailwind CSS frontend, an Express and MySQL backend, and JWT-based authentication with registration, login, logout, and a protected API.
-- **MTech COC Practice Project** *(completed)* — a practice project for my COC exam. It covers planning documents (BOQ, activity plan, schedule, ERD, scalability and recovery plans) and a dynamic web system built with HTML, external CSS, PHP, and MySQL, including login, registration, search, delete, and list pages.
+- **COC Exam Practice** *(in progress)* — my preparation for the COC exam. It has the MTech practice project, with planning documents (BOQ, activity plan, schedule, ERD, scalability and recovery plans) and a dynamic web system built with HTML, external CSS, PHP, and MySQL, plus practice on the model exam.
 
 ---
 
 ## 🛠️ Technologies
 
-**Frontend:** HTML · CSS · Bootstrap · Tailwind CSS · JavaScript · React (Vite) · React Router · Axios
+**Frontend:** HTML · CSS · Bootstrap · Tailwind CSS · JavaScript · jQuery · React (Vite) · React Router · Axios
 
 **Backend:** Node.js · Express.js · mysql2 · PHP (mysqli)
 
@@ -115,6 +104,11 @@ This module track is on hold, but it's very much still part of the plan.
 
 ```text
 my-learning-journey/
+├── 00-fullstack-foundations/
+│   ├── 01-web-development-foundations/         # Phase 1: HTML, CSS, Bootstrap
+│   ├── 02-programming-javascript-foundations/  # Phase 2: JavaScript, DOM, jQuery
+│   ├── 03-backend-react-development/           # Phase 3: Node, Express, MySQL, React
+│   └── README.md
 ├── 01. AI Full-Stack Web Developer Course/
 │   ├── 01. Introduction to AI-Powered Application Development/
 │   │   ├── 01. Project - Netflix Clone/
@@ -130,14 +124,27 @@ my-learning-journey/
 │   ├── client/   # Vite + React + Tailwind CSS frontend
 │   ├── server/   # Express + MySQL API with JWT authentication
 │   └── README.md
-├── 03-mtech-coc-practice/
-│   ├── project-1-documents/    # The question and the answer for the planning documents
-│   ├── project-2-web-system/   # HTML + CSS + PHP + MySQL web system and database files
-│   └── README.md
+├── 03-coc-practice/
+│   ├── 01-mtech-coc-practice/
+│   │   ├── project-1-documents/    # The question and the answer for the planning documents
+│   │   ├── project-2-web-system/   # HTML + CSS + PHP + MySQL web system and database files
+│   │   └── README.md
+│   └── 02-coc-model-exam-practice/
 └── README.md
 ```
 
 Each folder has its own README with the detailed notes, explanations, and documentation for that topic — this top-level README is just the overview.
+
+### 🧱 About the Full-Stack Foundations
+
+The practice work from my three foundation phases, grouped by the week I did it. Only the weeks where I saved practice code have a folder, so the week numbers are not continuous. It is practice work, not production code:
+
+- **Phase 1:** rebuilding the Apple homepage with HTML and CSS, responsive design with media queries, an Apple page with Bootstrap, and a practice portfolio site
+- **Phase 2:** algorithms, functions, loops and objects, DOM and events, jQuery, an Apple footer with interactivity, and a snake game
+- **Phase 3:** terminal, Bash and Git, Node.js modules and a web server, a MySQL practice project, and four React projects covering components, lists, state and Hooks, and API integration with routing
+- The React projects don't include `node_modules`. Run `npm install` inside a project folder to rebuild it from `package.json`
+
+The week-by-week breakdown lives in its own [README](./00-fullstack-foundations/README.md).
 
 ### 🎬 About the Netflix Clone
 
@@ -162,9 +169,13 @@ A practical full-stack project, separate from the course curriculum, built to pu
 
 Setup steps, the API reference, and security notes live in its own [README](./02-edumanage-system/README.md).
 
-### 🧾 About MTech COC Practice Project
+### 🧾 About the COC Practice
 
-A practice project that I built to prepare for the COC exam (occupational code EISWDDBAL-IV). It follows the structure of the two exam projects, with the scenario of the MTech Import and Export Company. It is a learning project and not a production system:
+My preparation for the COC exam (occupational code EISWDDBAL-IV), split into two parts. It is learning work and not a production system, and it is still in progress.
+
+#### 01 · MTech COC Practice Project
+
+A practice project that follows the structure of the two exam projects, with the scenario of the MTech Import and Export Company:
 
 - **Project 1:** the planning documents, with a BOQ, an activity plan, a Gantt schedule, an ERD of the four divisions, and scalability and recovery plans
 - **Project 2:** a database with five tables, one external CSS file, five HTML pages, and PHP scripts for login, registration, search, delete, and list
@@ -172,7 +183,11 @@ A practice project that I built to prepare for the COC exam (occupational code E
 - A database backup that was restored into a separate database to prove it works
 - A protection scan, and remote access from another device on the same network
 
-The structure, the setup steps for MAMP and XAMPP, and the known limitations live in its own [README](./03-mtech-coc-practice/README.md).
+The structure, the setup steps for MAMP and XAMPP, and the known limitations live in its own [README](./03-coc-practice/01-mtech-coc-practice/README.md).
+
+#### 02 · COC Model Exam Practice
+
+Practice work on the COC model exam, still in progress.
 
 ---
 
@@ -205,14 +220,12 @@ I learn best by building, not just watching. My approach here is:
 
 ## ✅ Progress Tracker
 
-| # | Learning Area                            | Status                                     |
-| - | ---------------------------------------- | ------------------------------------------ |
-| 1 | Web Development Foundations              | ✅ Completed                               |
-| 2 | Programming & JavaScript Foundations     | ✅ Completed                               |
-| 3 | Backend & React Development              | ✅ Completed                               |
-| 4 | `01. AI Full-Stack Web Developer Course` | ⏸ Paused                                   |
-| 5 | `02-edumanage-system`                    | ✅ Completed                               |
-| 6 | `03-mtech-coc-practice`                  | ✅ Completed                               |
+| # | Learning Area                                        | Status         |
+| - | ---------------------------------------------------- | -------------- |
+| 1 | [Full-Stack Foundations](./00-fullstack-foundations) | ✅ Completed   |
+| 2 | `01. AI Full-Stack Web Developer Course`             | ⏸ Paused       |
+| 3 | `02-edumanage-system`                                | ✅ Completed   |
+| 4 | `03-coc-practice`                                    | 🚧 In progress |
 
 ---
 
