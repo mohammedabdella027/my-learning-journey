@@ -18,9 +18,9 @@ It starts with the **full-stack foundations**: all the practice work from my thr
 
 ## 📍 Current Status
 
-**`03-coc-practice` is in progress.** It holds my preparation for the COC exam, which is still ahead. It has two parts: `01-mtech-coc-practice`, a practice project built on the MTech Import and Export Company scenario, and `02-coc-model-exam-practice`, practice on the model exam. The MTech project includes the planning documents of Project 1, and a working HTML, CSS, PHP, and MySQL system for Project 2, with a database backup and restore, a protection scan, and remote access.
+**`0-practical-projects/06-coc-practice` is in progress.** It holds my preparation for the COC exam, which is still ahead. It has two parts: `01-mtech-coc-practice`, a practice project built on the MTech Import and Export Company scenario, and `02-coc-model-exam-practice`, practice on the model exam. The MTech project includes the planning documents of Project 1, and a working HTML, CSS, PHP, and MySQL system for Project 2, with a database backup and restore, a protection scan, and remote access.
 
-**`02-edumanage-system` is complete.** It is a full-stack student management app with a React frontend, an Express API, and a MySQL database. It includes user registration, login with JWT authentication, a protected dashboard, and full student management (add, edit, and delete).
+**`0-practical-projects/05-edumanage-system` is complete.** It is a full-stack student management app with a React frontend, an Express API, and a MySQL database. It includes user registration, login with JWT authentication, a protected dashboard, and full student management (add, edit, and delete).
 
 **`01. AI Full-Stack Web Developer Course` is temporarily paused.** I stepped away right around the Vector Embeddings and Semantic Comparator modules, and it is still very much part of the plan.
 
@@ -51,12 +51,12 @@ Each stage built on the last — from styling my first web page, through the fou
 
 ## 📍 Current Progress
 
-| Learning Area                                                          | Status         |
-| ---------------------------------------------------------------------- | -------------- |
-| [Full-Stack Foundations](./00-fullstack-foundations)                   | ✅ Completed   |
-| `01. AI Full-Stack Web Developer Course`                               | ⏸ Paused       |
-| `02-edumanage-system`                                                  | ✅ Completed   |
-| `03-coc-practice`                                                      | 🚧 In progress |
+| Learning Area                                                    | Status         |
+| ---------------------------------------------------------------- | -------------- |
+| [Full-Stack Foundations](./00-fullstack-foundations)             | ✅ Completed   |
+| `01. AI Full-Stack Web Developer Course`                         | ⏸ Paused       |
+| [EduManage System](./0-practical-projects/05-edumanage-system)   | ✅ Completed   |
+| [COC Practice](./0-practical-projects/06-coc-practice)           | 🚧 In progress |
 
 ---
 
@@ -79,6 +79,9 @@ My practice work from three training phases, kept in [`00-fullstack-foundations`
 This module track is on hold, but it's very much still part of the plan.
 
 ### 🏗️ Practical Projects
+My real builds, indexed in [`0-practical-projects`](./0-practical-projects):
+
+- **Adidas Website**, **Dwello Real Estate**, **To-Do List**, and **Streaming Platform Clone** — standalone projects that live in their own repositories, each linked from the index.
 - **EduManage System** *(completed)* — a full-stack app I built outside the course structure, applying everything from the earlier modules in a real project. It covers a React (Vite) and Tailwind CSS frontend, an Express and MySQL backend, and JWT-based authentication with registration, login, logout, and a protected API.
 - **COC Exam Practice** *(in progress)* — my preparation for the COC exam. It has the MTech practice project, with planning documents (BOQ, activity plan, schedule, ERD, scalability and recovery plans) and a dynamic web system built with HTML, external CSS, PHP, and MySQL, plus practice on the model exam.
 
@@ -104,6 +107,22 @@ This module track is on hold, but it's very much still part of the plan.
 
 ```text
 my-learning-journey/
+├── 0-practical-projects/
+│   ├── 01-adidas-website/            # Link to the standalone repository
+│   ├── 02-dwello-real-estate/        # Link to the standalone repository
+│   ├── 03-todo-list/                 # Link to the standalone repository
+│   ├── 04-streaming-platform-clone/  # Link to the standalone repository
+│   ├── 05-edumanage-system/
+│   │   ├── client/   # Vite + React + Tailwind CSS frontend
+│   │   ├── server/   # Express + MySQL API with JWT authentication
+│   │   └── README.md
+│   ├── 06-coc-practice/
+│   │   ├── 01-mtech-coc-practice/
+│   │   │   ├── project-1-documents/    # The question and the answer for the planning documents
+│   │   │   ├── project-2-web-system/   # HTML + CSS + PHP + MySQL web system and database files
+│   │   │   └── README.md
+│   │   └── 02-coc-model-exam-practice/
+│   └── README.md
 ├── 00-fullstack-foundations/
 │   ├── 01-web-development-foundations/         # Phase 1: HTML, CSS, Bootstrap
 │   ├── 02-programming-javascript-foundations/  # Phase 2: JavaScript, DOM, jQuery
@@ -120,16 +139,6 @@ my-learning-journey/
 │   └── 03_Beyond_Keywords/
 │       ├── 01_The_Mathematics_of_Meaning/
 │       └── 02_Building_a_Semantic_Comparator_Demo_Practice/
-├── 02-edumanage-system/
-│   ├── client/   # Vite + React + Tailwind CSS frontend
-│   ├── server/   # Express + MySQL API with JWT authentication
-│   └── README.md
-├── 03-coc-practice/
-│   ├── 01-mtech-coc-practice/
-│   │   ├── project-1-documents/    # The question and the answer for the planning documents
-│   │   ├── project-2-web-system/   # HTML + CSS + PHP + MySQL web system and database files
-│   │   └── README.md
-│   └── 02-coc-model-exam-practice/
 └── README.md
 ```
 
@@ -167,7 +176,7 @@ A practical full-stack project, separate from the course curriculum, built to pu
 - Responsive layout with a sticky header and table head
 - A REST API that checks the token on every students request
 
-Setup steps, the API reference, and security notes live in its own [README](./02-edumanage-system/README.md).
+Setup steps, the API reference, and security notes live in its own [README](./0-practical-projects/05-edumanage-system/README.md).
 
 ### 🧾 About the COC Practice
 
@@ -183,7 +192,7 @@ A practice project that follows the structure of the two exam projects, with the
 - A database backup that was restored into a separate database to prove it works
 - A protection scan, and remote access from another device on the same network
 
-The structure, the setup steps for MAMP and XAMPP, and the known limitations live in its own [README](./03-coc-practice/01-mtech-coc-practice/README.md).
+The structure, the setup steps for MAMP and XAMPP, and the known limitations live in its own [README](./0-practical-projects/06-coc-practice/01-mtech-coc-practice/README.md).
 
 #### 02 · COC Model Exam Practice
 
@@ -220,12 +229,12 @@ I learn best by building, not just watching. My approach here is:
 
 ## ✅ Progress Tracker
 
-| # | Learning Area                                        | Status         |
-| - | ---------------------------------------------------- | -------------- |
-| 1 | [Full-Stack Foundations](./00-fullstack-foundations) | ✅ Completed   |
-| 2 | `01. AI Full-Stack Web Developer Course`             | ⏸ Paused       |
-| 3 | `02-edumanage-system`                                | ✅ Completed   |
-| 4 | `03-coc-practice`                                    | 🚧 In progress |
+| # | Learning Area                                                  | Status         |
+| - | -------------------------------------------------------------- | -------------- |
+| 1 | [Full-Stack Foundations](./00-fullstack-foundations)           | ✅ Completed   |
+| 2 | `01. AI Full-Stack Web Developer Course`                       | ⏸ Paused       |
+| 3 | [EduManage System](./0-practical-projects/05-edumanage-system) | ✅ Completed   |
+| 4 | [COC Practice](./0-practical-projects/06-coc-practice)         | 🚧 In progress |
 
 ---
 
