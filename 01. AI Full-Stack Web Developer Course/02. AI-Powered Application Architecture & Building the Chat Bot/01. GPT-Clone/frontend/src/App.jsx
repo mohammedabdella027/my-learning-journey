@@ -30,7 +30,7 @@ function App() {
   const fetchConversations = async () => {
     try {
       const response = await axios.get(`${API_BASE_URL}/chat/conversations`);
-      
+
       if (response.data.success) {
         // Fallback to empty array if the resolved key doesn't yield an array
         const fetchedData = response.data.data?.conversations || response.data.data;
@@ -38,7 +38,7 @@ function App() {
       }
     } catch (error) {
       console.error('Error fetching conversations:', error);
-      setConversations([]); 
+      setConversations([]);
     }
   };
 
@@ -55,7 +55,7 @@ function App() {
 
     try {
       const response = await axios.post(`${API_BASE_URL}/chat/conversations`, { question });
-      
+
       if (response.data.success) {
         const { userConversation, assistantConversation } = response.data.data;
 
