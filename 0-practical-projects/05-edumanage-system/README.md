@@ -41,7 +41,7 @@ EduManage is a full-stack student management application that I built to practic
 ## Folder Structure
 
 ```text
-02-edumanage-system/
+05-edumanage-system/
 ├── client/
 │   └── src/
 │       ├── components/
