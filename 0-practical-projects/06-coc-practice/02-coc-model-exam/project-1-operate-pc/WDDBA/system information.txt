@@ -1,0 +1,12 @@
+No	System information	Value
+1	System manufacturer	LENOVO
+2	Processor	Intel(R) Core(TM) i5-8365U CPU @ 1.60GHz
+3	OS Name	Microsoft Windows 11 Pro
+
+=======
+
+No	Software Name	Version
+1	Visual studio code	
+2	XAMPP Server	
+3	Microsoft Office	
+4	Avast anti-virus	not installed yet
