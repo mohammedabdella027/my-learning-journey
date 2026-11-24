@@ -39,7 +39,7 @@ Three projects, **4h 30min** in total:
 |---|---|---|
 | 1 | Task 1: Install application software | 🟡 VS Code, XAMPP and Microsoft Office installed; Avast pending |
 | 1 | Task 2: Set IP address and default page | ✅ Done |
-| 1 | Task 3: `WDDBA` folder and system information | ⬜ Not started |
+| 1 | Task 3: `WDDBA` folder and system information | ✅ Done |
 | 1 | Task 4: Spreadsheet (Total, Average, Rank, Grade) | ⬜ Not started |
 | 1 | Task 5: Library database in Microsoft Access | ⬜ Not started |
 | 2 | Plan for website and database | ⬜ Not started |
