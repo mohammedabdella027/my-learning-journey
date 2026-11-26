@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS evangadi_demo;
+USE evangadi_demo;
+
+CREATE TABLE IF NOT EXISTS handbook_pages (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  content TEXT NOT NULL,
+  embedding JSON NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
