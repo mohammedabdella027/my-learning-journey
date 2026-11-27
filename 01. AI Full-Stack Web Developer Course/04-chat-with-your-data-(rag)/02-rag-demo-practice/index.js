@@ -1,6 +1,7 @@
 import 'dotenv/config';
 import express from 'express';
 import { db } from './db/db.config.js';
+import { mainRouter } from './src/api/routes.js';
 
 const app = express();
 
@@ -8,6 +9,8 @@ const port = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.use("/api/", mainRouter);
 
 const startSever = async () => {
     try {
