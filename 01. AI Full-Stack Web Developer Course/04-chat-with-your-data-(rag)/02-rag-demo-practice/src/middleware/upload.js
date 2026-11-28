@@ -3,7 +3,7 @@ import multer from 'multer';
 const uploadTextFile = multer({
     storage: multer.memoryStorage(),
     limits: { fileSize: 5 * 1024 * 1024 },
-    fileFilter: (req, res, cb) => {
+    fileFilter: (req, file, cb) => {
         const isText =
             file.mimetype === 'text/plain' || file.originalname.endsWith('.txt');
 
